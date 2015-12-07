@@ -1,0 +1,6 @@
+hash-ref: no value found for key
+  key: sieve
+  context...:
+   /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg1/tmertogu/./sbi.scm:200:0: evall
+   /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg1/tmertogu/./sbi.scm:356:0: relop
+   /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg1/tmertogu/./sbi.scm:249:0: execute-line

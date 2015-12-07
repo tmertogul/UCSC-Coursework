@@ -1,0 +1,9 @@
+gmake --no-print-directory deps
+ocamldep bigint.mli bigint.ml maindc.ml scanner.mll >Makefile.deps
+ocamlc -c bigint.mli
+ocamlc -c bigint.ml
+ocamllex scanner.mll
+6 states, 267 transitions, table size 1104 bytes
+ocamlc -c scanner.ml
+ocamlc -c maindc.ml
+ocamlc bigint.cmo scanner.cmo maindc.cmo -o ocamldc

@@ -1,0 +1,8 @@
+=: contract violation
+  expected: number?
+  given: inputcount
+  argument position: 1st
+  other arguments...:
+   -1.0
+  context...:
+   /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg1/tmertogu/./sbi.scm:249:0: execute-line
