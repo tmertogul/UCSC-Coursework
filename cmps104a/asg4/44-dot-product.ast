@@ -1,0 +1,148 @@
+ROOT "" (0.0.0) {0}                  
+| PROTOTYPE "" (5.23.0) {0}  
+| | VOID "void" (5.23.0) {0} 
+| | | DECLID "__assert_fail" (5.23.5) {0} variable lval 
+| | PARAMLIST "(" (5.23.19) {0} param   
+| | | STRING "string" (5.23.20) {0} string 
+| | | | DECLID "expr" (5.23.27) {0} string variable lval 
+| | | STRING "string" (5.23.33) {0} string param 
+| | | | DECLID "file" (5.23.40) {0} string variable lval 
+| | | INT "int" (5.23.46) {0} int param 
+| | | | DECLID "line" (5.23.50) {0} int variable lval 
+| PROTOTYPE "" (5.24.0) {0}  
+| | VOID "void" (5.24.0) {0} 
+| | | DECLID "putb" (5.24.5) {0} variable lval 
+| | PARAMLIST "(" (5.24.10) {0} param 
+| | | BOOL "bool" (5.24.11) {0} 
+| | | | DECLID "b" (5.24.16) {0} variable lval 
+| PROTOTYPE "" (5.25.0) {0}  
+| | VOID "void" (5.25.0) {0} 
+| | | DECLID "putc" (5.25.5) {0} variable lval 
+| | PARAMLIST "(" (5.25.10) {0} param 
+| | | CHAR "char" (5.25.11) {0} 
+| | | | DECLID "c" (5.25.16) {0} variable lval 
+| PROTOTYPE "" (5.26.0) {0}  
+| | VOID "void" (5.26.0) {0} 
+| | | DECLID "puti" (5.26.5) {0} variable lval 
+| | PARAMLIST "(" (5.26.10) {0} param 
+| | | INT "int" (5.26.11) {0} int 
+| | | | DECLID "i" (5.26.15) {0} int variable lval 
+| PROTOTYPE "" (5.27.0) {0}  
+| | VOID "void" (5.27.0) {0} 
+| | | DECLID "puts" (5.27.5) {0} variable lval 
+| | PARAMLIST "(" (5.27.10) {0} param 
+| | | STRING "string" (5.27.11) {0} string 
+| | | | DECLID "s" (5.27.18) {0} string variable lval 
+| PROTOTYPE "" (5.28.0) {0}  
+| | VOID "void" (5.28.0) {0} 
+| | | DECLID "endl" (5.28.5) {0} variable lval 
+| | PARAMLIST "(" (5.28.10) {0} param 
+| PROTOTYPE "" (5.29.0) {0}  
+| | INT "int" (5.29.0) {0} int 
+| | | DECLID "getc" (5.29.4) {0} int variable lval 
+| | PARAMLIST "(" (5.29.9) {0} param 
+| PROTOTYPE "" (5.30.0) {0}  
+| | STRING "string" (5.30.0) {0} string 
+| | | DECLID "getw" (5.30.7) {0} string variable lval 
+| | PARAMLIST "(" (5.30.12) {0} param 
+| PROTOTYPE "" (5.31.0) {0}  
+| | STRING "string" (5.31.0) {0} string 
+| | | DECLID "getln" (5.31.7) {0} string variable lval 
+| | PARAMLIST "(" (5.31.13) {0} param 
+| PROTOTYPE "" (5.32.0) {0}  
+| | STRING "string" (5.32.0) {0} string  
+| | | NEWARRAY "[]" (5.32.6) {0} string 
+| | | DECLID "getargv" (5.32.9) {0} string variable lval 
+| | PARAMLIST "(" (5.32.17) {0} param 
+| PROTOTYPE "" (5.33.0) {0}  
+| | VOID "void" (5.33.0) {0} 
+| | | DECLID "exit" (5.33.5) {0} variable lval 
+| | PARAMLIST "(" (5.33.10) {0} param 
+| | | INT "int" (5.33.11) {0} int 
+| | | | DECLID "status" (5.33.15) {0} int variable lval 
+| FUNCTION "" (6.5.0) {0} function   
+| | INT "int" (6.5.0) {0} int function 
+| | | DECLID "dot_product" (6.5.4) {0} int variable lval 
+| | PARAMLIST "(" (6.5.16) {0} function param   
+| | | INT "int" (6.5.17) {0} int 
+| | | | DECLID "size" (6.5.21) {0} int variable lval 
+| | | INT "int" (6.5.27) {0} int param  
+| | | | NEWARRAY "[]" (6.5.30) {0} int 
+| | | | DECLID "vec1" (6.5.33) {0} int variable lval 
+| | | INT "int" (6.5.39) {0} int param  
+| | | | NEWARRAY "[]" (6.5.42) {0} int 
+| | | | DECLID "vec2" (6.5.45) {0} int variable lval 
+| | BLOCK "{" (6.5.51) {0} function    
+| | | VARDECL "=" (6.6.13) {0} variable lval  
+| | | | INT "int" (6.6.3) {0} int 
+| | | | | DECLID "index" (6.6.7) {0} int variable lval 
+| | | | INTCON "0" (6.6.15) {0} int const 
+| | | VARDECL "=" (6.7.11) {0} variable lval  
+| | | | INT "int" (6.7.3) {0} int 
+| | | | | DECLID "dot" (6.7.7) {0} int variable lval 
+| | | | INTCON "0" (6.7.13) {0} int const 
+| | | WHILE "while" (6.8.3) {0}  
+| | | | LT "<" (6.8.16) {0}  
+| | | | | IDENT "index" (6.8.10) {0} 
+| | | | | IDENT "size" (6.8.18) {0} 
+| | | | BLOCK "{" (6.8.24) {0}  
+| | | | | '=' "=" (6.9.10) {0}  
+| | | | | | IDENT "dot" (6.9.6) {0} 
+| | | | | | '+' "+" (6.9.16) {0}  
+| | | | | | | IDENT "dot" (6.9.12) {0} 
+| | | | | | | '*' "*" (6.9.30) {0}  
+| | | | | | | | NEWARRAY "vec1" (6.9.18) {0} struct "vec1" 
+| | | | | | | | | IDENT "index" (6.9.23) {0} struct "index" 
+| | | | | | | | NEWARRAY "vec2" (6.9.32) {0} struct "vec2" 
+| | | | | | | | | IDENT "index" (6.9.37) {0} struct "index" 
+| | | | | '=' "=" (6.10.12) {0}  
+| | | | | | IDENT "index" (6.10.6) {0} 
+| | | | | | '+' "+" (6.10.20) {0}  
+| | | | | | | IDENT "index" (6.10.14) {0} 
+| | | | | | | INTCON "1" (6.10.22) {0} int const 
+| | | RETURN "return" (6.12.3) {0} 
+| | | | IDENT "dot" (6.12.10) {0} 
+| VARDECL "=" (6.16.11) {0} variable lval  
+| | INT "int" (6.16.0) {0} int  
+| | | NEWARRAY "[]" (6.16.3) {0} int 
+| | | DECLID "vec1" (6.16.6) {0} int variable lval 
+| | NEWARRAY "new" (6.16.13) {0}  
+| | | INT "int" (6.16.17) {0} int 
+| | | INTCON "10" (6.16.21) {0} int const 
+| VARDECL "=" (6.17.11) {0} variable lval  
+| | INT "int" (6.17.0) {0} int  
+| | | NEWARRAY "[]" (6.17.3) {0} int 
+| | | DECLID "vec2" (6.17.6) {0} int variable lval 
+| | NEWARRAY "new" (6.17.13) {0}  
+| | | INT "int" (6.17.17) {0} int 
+| | | INTCON "10" (6.17.21) {0} int const 
+| VARDECL "=" (6.18.6) {0} variable lval  
+| | INT "int" (6.18.0) {0} int 
+| | | DECLID "i" (6.18.4) {0} int variable lval 
+| | INTCON "0" (6.18.8) {0} int const 
+| WHILE "while" (6.19.0) {0}  
+| | LT "<" (6.19.9) {0}  
+| | | IDENT "i" (6.19.7) {0} 
+| | | INTCON "10" (6.19.11) {0} int const 
+| | BLOCK "{" (6.19.15) {0}  
+| | | '=' "=" (6.20.11) {0}  
+| | | | NEWARRAY "vec1" (6.20.3) {0} struct "vec1" 
+| | | | | IDENT "i" (6.20.8) {0} struct "i" 
+| | | | '+' "+" (6.20.15) {0}  
+| | | | | IDENT "i" (6.20.13) {0} 
+| | | | | INTCON "10" (6.20.17) {0} int const 
+| | | '=' "=" (6.21.11) {0}  
+| | | | NEWARRAY "vec2" (6.21.3) {0} struct "vec2" 
+| | | | | IDENT "i" (6.21.8) {0} struct "i" 
+| | | | '*' "*" (6.21.15) {0}  
+| | | | | IDENT "i" (6.21.13) {0} 
+| | | | | INTCON "10" (6.21.17) {0} int const 
+| CALL "(" (6.23.5) {0}  
+| | IDENT "puti" (6.23.0) {0} 
+| | CALL "(" (6.23.18) {0}    
+| | | IDENT "dot_product" (6.23.6) {0} 
+| | | INTCON "10" (6.23.19) {0} int const 
+| | | IDENT "vec1" (6.23.23) {0} 
+| | | IDENT "vec2" (6.23.29) {0} 
+| CALL "(" (6.24.5) {0} 
+| | IDENT "endl" (6.24.0) {0} 

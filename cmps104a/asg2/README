@@ -1,0 +1,27 @@
+Tim Mertogul tmertogu@ucsc.edu
+
+Please re-grade this as my ASG2 
+
+I have a fair emount of "junk" code that applies to later projects,
+ please ignore as I'm editing an updated version to gain max points
+ for this submission
+
+
+ASG4 includes:
+README
+Makefile
+main.cc
+auxlib.h
+auxlib.cc
+stringtable.h 
+stringtable.cc
+ 
+astree.h
+astree.cc
+lyutils.h
+lyutils.cc
+
+scanner.l
+parser.y
+
+

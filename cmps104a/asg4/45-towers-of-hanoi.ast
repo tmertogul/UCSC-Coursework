@@ -1,0 +1,130 @@
+ROOT "" (0.0.0) {0}              
+| PROTOTYPE "" (5.23.0) {0}  
+| | VOID "void" (5.23.0) {0} 
+| | | DECLID "__assert_fail" (5.23.5) {0} variable lval 
+| | PARAMLIST "(" (5.23.19) {0} param   
+| | | STRING "string" (5.23.20) {0} string 
+| | | | DECLID "expr" (5.23.27) {0} string variable lval 
+| | | STRING "string" (5.23.33) {0} string param 
+| | | | DECLID "file" (5.23.40) {0} string variable lval 
+| | | INT "int" (5.23.46) {0} int param 
+| | | | DECLID "line" (5.23.50) {0} int variable lval 
+| PROTOTYPE "" (5.24.0) {0}  
+| | VOID "void" (5.24.0) {0} 
+| | | DECLID "putb" (5.24.5) {0} variable lval 
+| | PARAMLIST "(" (5.24.10) {0} param 
+| | | BOOL "bool" (5.24.11) {0} 
+| | | | DECLID "b" (5.24.16) {0} variable lval 
+| PROTOTYPE "" (5.25.0) {0}  
+| | VOID "void" (5.25.0) {0} 
+| | | DECLID "putc" (5.25.5) {0} variable lval 
+| | PARAMLIST "(" (5.25.10) {0} param 
+| | | CHAR "char" (5.25.11) {0} 
+| | | | DECLID "c" (5.25.16) {0} variable lval 
+| PROTOTYPE "" (5.26.0) {0}  
+| | VOID "void" (5.26.0) {0} 
+| | | DECLID "puti" (5.26.5) {0} variable lval 
+| | PARAMLIST "(" (5.26.10) {0} param 
+| | | INT "int" (5.26.11) {0} int 
+| | | | DECLID "i" (5.26.15) {0} int variable lval 
+| PROTOTYPE "" (5.27.0) {0}  
+| | VOID "void" (5.27.0) {0} 
+| | | DECLID "puts" (5.27.5) {0} variable lval 
+| | PARAMLIST "(" (5.27.10) {0} param 
+| | | STRING "string" (5.27.11) {0} string 
+| | | | DECLID "s" (5.27.18) {0} string variable lval 
+| PROTOTYPE "" (5.28.0) {0}  
+| | VOID "void" (5.28.0) {0} 
+| | | DECLID "endl" (5.28.5) {0} variable lval 
+| | PARAMLIST "(" (5.28.10) {0} param 
+| PROTOTYPE "" (5.29.0) {0}  
+| | INT "int" (5.29.0) {0} int 
+| | | DECLID "getc" (5.29.4) {0} int variable lval 
+| | PARAMLIST "(" (5.29.9) {0} param 
+| PROTOTYPE "" (5.30.0) {0}  
+| | STRING "string" (5.30.0) {0} string 
+| | | DECLID "getw" (5.30.7) {0} string variable lval 
+| | PARAMLIST "(" (5.30.12) {0} param 
+| PROTOTYPE "" (5.31.0) {0}  
+| | STRING "string" (5.31.0) {0} string 
+| | | DECLID "getln" (5.31.7) {0} string variable lval 
+| | PARAMLIST "(" (5.31.13) {0} param 
+| PROTOTYPE "" (5.32.0) {0}  
+| | STRING "string" (5.32.0) {0} string  
+| | | NEWARRAY "[]" (5.32.6) {0} string 
+| | | DECLID "getargv" (5.32.9) {0} string variable lval 
+| | PARAMLIST "(" (5.32.17) {0} param 
+| PROTOTYPE "" (5.33.0) {0}  
+| | VOID "void" (5.33.0) {0} 
+| | | DECLID "exit" (5.33.5) {0} variable lval 
+| | PARAMLIST "(" (5.33.10) {0} param 
+| | | INT "int" (5.33.11) {0} int 
+| | | | DECLID "status" (5.33.15) {0} int variable lval 
+| FUNCTION "" (6.5.0) {0} function   
+| | VOID "void" (6.5.0) {0} function 
+| | | DECLID "move" (6.5.5) {0} variable lval 
+| | PARAMLIST "(" (6.5.10) {0} function param  
+| | | STRING "string" (6.5.11) {0} string 
+| | | | DECLID "src" (6.5.18) {0} string variable lval 
+| | | STRING "string" (6.5.23) {0} string param 
+| | | | DECLID "dst" (6.5.30) {0} string variable lval 
+| | BLOCK "{" (6.5.35) {0} function     
+| | | CALL "(" (6.6.8) {0}  
+| | | | IDENT "puts" (6.6.3) {0} 
+| | | | STRINGCON ""Move a disk from "" (6.6.9) {0} string const 
+| | | CALL "(" (6.7.8) {0}  
+| | | | IDENT "puts" (6.7.3) {0} 
+| | | | IDENT "src" (6.7.9) {0} 
+| | | CALL "(" (6.8.8) {0}  
+| | | | IDENT "puts" (6.8.3) {0} 
+| | | | STRINGCON "" to "" (6.8.9) {0} string const 
+| | | CALL "(" (6.9.8) {0}  
+| | | | IDENT "puts" (6.9.3) {0} 
+| | | | IDENT "dst" (6.9.9) {0} 
+| | | CALL "(" (6.10.8) {0}  
+| | | | IDENT "puts" (6.10.3) {0} 
+| | | | STRINGCON "".\n"" (6.10.9) {0} string const 
+| FUNCTION "" (6.13.0) {0} function   
+| | VOID "void" (6.13.0) {0} function 
+| | | DECLID "towers" (6.13.5) {0} variable lval 
+| | PARAMLIST "(" (6.13.12) {0} function param    
+| | | INT "int" (6.13.13) {0} int 
+| | | | DECLID "ndisks" (6.13.17) {0} int variable lval 
+| | | STRING "string" (6.13.25) {0} string param 
+| | | | DECLID "src" (6.13.32) {0} string variable lval 
+| | | STRING "string" (6.13.37) {0} string param 
+| | | | DECLID "tmp" (6.13.44) {0} string variable lval 
+| | | STRING "string" (6.13.49) {0} string param 
+| | | | DECLID "dst" (6.13.56) {0} string variable lval 
+| | BLOCK "{" (6.13.61) {0} function    
+| | | IF "if" (6.14.3) {0}  
+| | | | LT "<" (6.14.14) {0}  
+| | | | | IDENT "ndisks" (6.14.7) {0} 
+| | | | | INTCON "1" (6.14.16) {0} int const 
+| | | | RETURNVOID "return" (6.14.19) {0} 
+| | | CALL "(" (6.15.10) {0}     
+| | | | IDENT "towers" (6.15.3) {0} 
+| | | | '-' "-" (6.15.18) {0}  
+| | | | | IDENT "ndisks" (6.15.11) {0} 
+| | | | | INTCON "1" (6.15.20) {0} int const 
+| | | | IDENT "src" (6.15.23) {0} 
+| | | | IDENT "dst" (6.15.28) {0} 
+| | | | IDENT "tmp" (6.15.33) {0} 
+| | | CALL "(" (6.16.8) {0}   
+| | | | IDENT "move" (6.16.3) {0} 
+| | | | IDENT "src" (6.16.9) {0} 
+| | | | IDENT "dst" (6.16.14) {0} 
+| | | CALL "(" (6.17.10) {0}     
+| | | | IDENT "towers" (6.17.3) {0} 
+| | | | '-' "-" (6.17.18) {0}  
+| | | | | IDENT "ndisks" (6.17.11) {0} 
+| | | | | INTCON "1" (6.17.20) {0} int const 
+| | | | IDENT "tmp" (6.17.23) {0} 
+| | | | IDENT "src" (6.17.28) {0} 
+| | | | IDENT "dst" (6.17.33) {0} 
+| CALL "(" (6.20.7) {0}     
+| | IDENT "towers" (6.20.0) {0} 
+| | INTCON "4" (6.20.8) {0} int const 
+| | STRINGCON ""Source"" (6.20.11) {0} string const 
+| | STRINGCON ""Temporary"" (6.20.21) {0} string const 
+| | STRINGCON ""Destination"" (6.20.34) {0} string const 

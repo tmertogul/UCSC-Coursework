@@ -1,0 +1,11 @@
+Tim Mertogul tmertogu@ucsc.edu
+
+ASG1 includes:
+README
+Makefile
+stringtable.h
+stringtable.cpp
+auxlib.h
+auxlib.cpp
+main.cpp
+

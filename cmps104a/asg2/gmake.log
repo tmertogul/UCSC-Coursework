@@ -1,0 +1,17 @@
+Makefile:168: Makefile.deps: No such file or directory
+gmake --no-print-directory deps
+flex --outfile=yylex.cc scanner.l 2>yylex.output
+grep -v '^  ' yylex.output
+flex version 2.5.35 usage statistics:
+bison --defines=yyparse.h --output=yyparse.cc parser.y
+parser.y: conflicts: 1 shift/reduce, 1 reduce/reduce
+g++ -MM -std=gnu++11 astree.cc lyutils.cc auxlib.cc stringset.cc main.cc  yylex.cc yyparse.cc  >>Makefile.deps
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c astree.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c lyutils.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c auxlib.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c stringset.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c main.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c yylex.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c yyparse.cc
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -ooc astree.o lyutils.o auxlib.o stringset.o main.o yylex.o yyparse.o
+ident astree.o lyutils.o auxlib.o stringset.o main.o yylex.o yyparse.o oc >ident.output

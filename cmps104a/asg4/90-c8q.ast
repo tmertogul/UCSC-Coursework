@@ -1,0 +1,6 @@
+ROOT "" (0.0.0) {0} 
+| CALL "(" (3.4.27) {0}    
+| | IDENT "Q" (3.4.26) {0} 
+| | INTCON "0" (3.4.28) {0} int const 
+| | INTCON "0" (3.4.30) {0} int const 
+| | INTCON "0" (3.4.32) {0} int const 

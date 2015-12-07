@@ -1,0 +1,20 @@
+Tim Mertogul tmertogu@ucsc.edu
+
+ASG3 includes:
+README
+Makefile
+main.cc
+auxlib.h
+auxlib.cc
+stringtable.h
+stringtable.cc
+ 
+astree.h
+astree.cc
+lyutils.h
+lyutils.cc
+
+scanner.l
+parser.y
+
+

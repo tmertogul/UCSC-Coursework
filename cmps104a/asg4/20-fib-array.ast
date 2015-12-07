@@ -1,0 +1,134 @@
+ROOT "" (0.0.0) {0}                   
+| PROTOTYPE "" (5.23.0) {0}  
+| | VOID "void" (5.23.0) {0} 
+| | | DECLID "__assert_fail" (5.23.5) {0} variable lval 
+| | PARAMLIST "(" (5.23.19) {0} param   
+| | | STRING "string" (5.23.20) {0} string 
+| | | | DECLID "expr" (5.23.27) {0} string variable lval 
+| | | STRING "string" (5.23.33) {0} string param 
+| | | | DECLID "file" (5.23.40) {0} string variable lval 
+| | | INT "int" (5.23.46) {0} int param 
+| | | | DECLID "line" (5.23.50) {0} int variable lval 
+| PROTOTYPE "" (5.24.0) {0}  
+| | VOID "void" (5.24.0) {0} 
+| | | DECLID "putb" (5.24.5) {0} variable lval 
+| | PARAMLIST "(" (5.24.10) {0} param 
+| | | BOOL "bool" (5.24.11) {0} 
+| | | | DECLID "b" (5.24.16) {0} variable lval 
+| PROTOTYPE "" (5.25.0) {0}  
+| | VOID "void" (5.25.0) {0} 
+| | | DECLID "putc" (5.25.5) {0} variable lval 
+| | PARAMLIST "(" (5.25.10) {0} param 
+| | | CHAR "char" (5.25.11) {0} 
+| | | | DECLID "c" (5.25.16) {0} variable lval 
+| PROTOTYPE "" (5.26.0) {0}  
+| | VOID "void" (5.26.0) {0} 
+| | | DECLID "puti" (5.26.5) {0} variable lval 
+| | PARAMLIST "(" (5.26.10) {0} param 
+| | | INT "int" (5.26.11) {0} int 
+| | | | DECLID "i" (5.26.15) {0} int variable lval 
+| PROTOTYPE "" (5.27.0) {0}  
+| | VOID "void" (5.27.0) {0} 
+| | | DECLID "puts" (5.27.5) {0} variable lval 
+| | PARAMLIST "(" (5.27.10) {0} param 
+| | | STRING "string" (5.27.11) {0} string 
+| | | | DECLID "s" (5.27.18) {0} string variable lval 
+| PROTOTYPE "" (5.28.0) {0}  
+| | VOID "void" (5.28.0) {0} 
+| | | DECLID "endl" (5.28.5) {0} variable lval 
+| | PARAMLIST "(" (5.28.10) {0} param 
+| PROTOTYPE "" (5.29.0) {0}  
+| | INT "int" (5.29.0) {0} int 
+| | | DECLID "getc" (5.29.4) {0} int variable lval 
+| | PARAMLIST "(" (5.29.9) {0} param 
+| PROTOTYPE "" (5.30.0) {0}  
+| | STRING "string" (5.30.0) {0} string 
+| | | DECLID "getw" (5.30.7) {0} string variable lval 
+| | PARAMLIST "(" (5.30.12) {0} param 
+| PROTOTYPE "" (5.31.0) {0}  
+| | STRING "string" (5.31.0) {0} string 
+| | | DECLID "getln" (5.31.7) {0} string variable lval 
+| | PARAMLIST "(" (5.31.13) {0} param 
+| PROTOTYPE "" (5.32.0) {0}  
+| | STRING "string" (5.32.0) {0} string  
+| | | NEWARRAY "[]" (5.32.6) {0} string 
+| | | DECLID "getargv" (5.32.9) {0} string variable lval 
+| | PARAMLIST "(" (5.32.17) {0} param 
+| PROTOTYPE "" (5.33.0) {0}  
+| | VOID "void" (5.33.0) {0} 
+| | | DECLID "exit" (5.33.5) {0} variable lval 
+| | PARAMLIST "(" (5.33.10) {0} param 
+| | | INT "int" (5.33.11) {0} int 
+| | | | DECLID "status" (5.33.15) {0} int variable lval 
+| VARDECL "=" (6.9.16) {0} variable lval  
+| | INT "int" (6.9.0) {0} int  
+| | | NEWARRAY "[]" (6.9.3) {0} int 
+| | | DECLID "fibonacci" (6.9.6) {0} int variable lval 
+| | NEWARRAY "new" (6.9.18) {0}  
+| | | INT "int" (6.9.22) {0} int 
+| | | INTCON "30" (6.9.26) {0} int const 
+| '=' "=" (6.11.13) {0}  
+| | NEWARRAY "fibonacci" (6.11.0) {0} struct "fibonacci" 
+| | | INTCON "0" (6.11.10) {0} int struct "0" const 
+| | INTCON "0" (6.11.15) {0} int const 
+| '=' "=" (6.12.13) {0}  
+| | NEWARRAY "fibonacci" (6.12.0) {0} struct "fibonacci" 
+| | | INTCON "1" (6.12.10) {0} int struct "1" const 
+| | INTCON "1" (6.12.15) {0} int const 
+| VARDECL "=" (6.14.10) {0} variable lval  
+| | INT "int" (6.14.0) {0} int 
+| | | DECLID "index" (6.14.4) {0} int variable lval 
+| | INTCON "2" (6.14.12) {0} int const 
+| WHILE "while" (6.15.0) {0}  
+| | LT "<" (6.15.13) {0}  
+| | | IDENT "index" (6.15.7) {0} 
+| | | INTCON "30" (6.15.15) {0} int const 
+| | BLOCK "{" (6.15.19) {0}  
+| | | '=' "=" (6.16.20) {0}  
+| | | | NEWARRAY "fibonacci" (6.16.3) {0} struct "fibonacci" 
+| | | | | IDENT "index" (6.16.13) {0} struct "index" 
+| | | | '+' "+" (6.16.43) {0}  
+| | | | | NEWARRAY "fibonacci" (6.16.22) {0} struct "fibonacci" 
+| | | | | | '-' "-" (6.16.38) {0} struct "-"  
+| | | | | | | IDENT "index" (6.16.32) {0} 
+| | | | | | | INTCON "1" (6.16.40) {0} int const 
+| | | | | NEWARRAY "fibonacci" (6.16.45) {0} struct "fibonacci" 
+| | | | | | '-' "-" (6.16.61) {0} struct "-"  
+| | | | | | | IDENT "index" (6.16.55) {0} 
+| | | | | | | INTCON "2" (6.16.63) {0} int const 
+| | | '=' "=" (6.17.9) {0}  
+| | | | IDENT "index" (6.17.3) {0} 
+| | | | '+' "+" (6.17.17) {0}  
+| | | | | IDENT "index" (6.17.11) {0} 
+| | | | | INTCON "1" (6.17.19) {0} int const 
+| '=' "=" (6.20.6) {0}  
+| | IDENT "index" (6.20.0) {0} 
+| | INTCON "0" (6.20.8) {0} int const 
+| CALL "(" (6.21.5) {0}  
+| | IDENT "puts" (6.21.0) {0} 
+| | STRINGCON ""Numeri di figlio Bonacci\n"" (6.21.6) {0} string const 
+| WHILE "while" (6.22.0) {0}  
+| | LT "<" (6.22.13) {0}  
+| | | IDENT "index" (6.22.7) {0} 
+| | | INTCON "30" (6.22.15) {0} int const 
+| | BLOCK "{" (6.22.19) {0}      
+| | | CALL "(" (6.23.8) {0}  
+| | | | IDENT "puts" (6.23.3) {0} 
+| | | | STRINGCON ""fibonacci["" (6.23.9) {0} string const 
+| | | CALL "(" (6.24.8) {0}  
+| | | | IDENT "puti" (6.24.3) {0} 
+| | | | IDENT "index" (6.24.9) {0} 
+| | | CALL "(" (6.25.8) {0}  
+| | | | IDENT "puts" (6.25.3) {0} 
+| | | | STRINGCON "" = "" (6.25.9) {0} string const 
+| | | CALL "(" (6.26.8) {0}  
+| | | | IDENT "puti" (6.26.3) {0} 
+| | | | NEWARRAY "fibonacci" (6.26.9) {0} struct "fibonacci" 
+| | | | | IDENT "index" (6.26.19) {0} struct "index" 
+| | | CALL "(" (6.27.8) {0} 
+| | | | IDENT "endl" (6.27.3) {0} 
+| | | '=' "=" (6.28.9) {0}  
+| | | | IDENT "index" (6.28.3) {0} 
+| | | | '+' "+" (6.28.17) {0}  
+| | | | | IDENT "index" (6.28.11) {0} 
+| | | | | INTCON "1" (6.28.19) {0} int const 

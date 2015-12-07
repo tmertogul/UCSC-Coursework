@@ -1,0 +1,3 @@
+ROOT "" (0.0.0) {0} 
+| RETURN "return" (3.5.0) {0} 
+| | IDENT "foo" (3.5.7) {0} 

@@ -1,0 +1,54 @@
+__assert_fail (5.23.5) {0} variable lval 
+  expr (5.23.27) {1} string variable lval 
+  file (5.23.40) {1} string variable lval 
+  line (5.23.50) {1} int variable lval 
+
+putb (5.24.5) {0} variable lval 
+  b (5.24.16) {1} variable lval 
+
+putc (5.25.5) {0} variable lval 
+  c (5.25.16) {1} variable lval 
+
+puti (5.26.5) {0} variable lval 
+  i (5.26.15) {1} int variable lval 
+
+puts (5.27.5) {0} variable lval 
+  s (5.27.18) {1} string variable lval 
+
+endl (5.28.5) {0} variable lval 
+
+getc (5.29.4) {0} int variable lval 
+
+getw (5.30.7) {0} string variable lval 
+
+getln (5.31.7) {0} string variable lval 
+
+[] (5.32.6) {0} string 
+
+exit (5.33.5) {0} variable lval 
+  status (5.33.15) {1} int variable lval 
+
+void (5.23.0) {0} 
+
+void (5.23.0) {0} 
+
+f0 (6.8.4) {0} int variable lval 
+
+f1 (6.9.4) {0} int variable lval 
+  a (6.9.12) {1} int variable lval 
+
+f2 (6.10.4) {0} int variable lval 
+  a (6.10.12) {1} int variable lval 
+  b (6.10.19) {1} int variable lval 
+
+f3 (6.11.4) {0} int variable lval 
+  a (6.11.15) {1} string variable lval 
+  b (6.11.25) {1} string variable lval 
+  c (6.11.35) {1} string variable lval 
+
+f4 (6.12.4) {0} int variable lval 
+  a (6.12.12) {1} struct "foo" variable lval 
+  b (6.12.19) {1} struct "bar" variable lval 
+
+s (6.13.7) {0} string variable lval 
+[] (6.14.6) {0} string 

@@ -1,0 +1,44 @@
+$Id: README.graders,v 1.1 2014-10-30 15:38:46-07 - - $
+
+Instructions to graders:
+
+Note that students may have submitted an earlier project
+than the one explicitly mentioned in the due date.
+
+1. Copy all files from the score directory into the student's
+   submit directory.
+
+2. Run mk.build
+
+3. If mk.build succeeded, run mk.tests:
+
+   (3a) Check to see what output files were created.
+        If only .str files were created, grade as asg1
+        If .str and .tok files were created, grade as asg2
+        If .str, .tok, .ast all created, grade as asg3
+
+   (3b) DELETE all SCORE files, except for the one describing
+        the project that the student submitted.  Grade only
+        one project, not several.
+
+   (3c) Edit the appropriate SCORE.asg* file.
+
+4. If mk.build failed, look at the code to see what modules
+   are present and choose which project to grade as appropriate.
+
+   (4a) DELETE all irrelevant SCORE.asg* files and edit the
+        part for SOURCE CODE.
+
+   (4b) Assign 0 for program execution since there is no 
+        oc to run.
+
+5. Make a SYMLINK, don't copy to create a SCORE symlink:
+   e.g.  ln -s SCORE.asg1 SCORE
+   or whatever SCORE.asg* file you just graded.
+
+6. If pair programming, cd partner's directory and make two
+   symlinks:
+   ln -s ../PARTNER/SCORE .
+   ln -s ../PARTNER/SCORE.asg? .
+   (Substitute a number [1-5] for the ?
+

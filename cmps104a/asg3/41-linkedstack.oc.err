@@ -1,0 +1,11 @@
+oc: 41-linkedstack.oc: 7: syntax error, unexpected TOK_IDENT
+oc: 41-linkedstack.oc: 11: syntax error, unexpected TOK_IDENT
+oc: 41-linkedstack.oc: 14: syntax error, unexpected TOK_IDENT
+oc: 41-linkedstack.oc: 17: syntax error, unexpected '}'
+oc: 41-linkedstack.oc: 23: syntax error, unexpected '}'
+oc: 41-linkedstack.oc: 25: syntax error, unexpected TOK_IDENT
+oc: 41-linkedstack.oc: 27: syntax error, unexpected TOK_IDENT
+oc: 41-linkedstack.oc: 31: syntax error, unexpected '}'
+oc: 41-linkedstack.oc: 33: syntax error, unexpected TOK_IDENT
+oc: 41-linkedstack.oc: 39: syntax error, unexpected '}'
+oc: 41-linkedstack.oc: 44: syntax error, unexpected TOK_IDENT

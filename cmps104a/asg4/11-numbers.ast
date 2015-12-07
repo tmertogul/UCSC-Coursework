@@ -1,0 +1,88 @@
+ROOT "" (0.0.0) {0}               
+| PROTOTYPE "" (5.23.0) {0}  
+| | VOID "void" (5.23.0) {0} 
+| | | DECLID "__assert_fail" (5.23.5) {0} variable lval 
+| | PARAMLIST "(" (5.23.19) {0} param   
+| | | STRING "string" (5.23.20) {0} string 
+| | | | DECLID "expr" (5.23.27) {0} string variable lval 
+| | | STRING "string" (5.23.33) {0} string param 
+| | | | DECLID "file" (5.23.40) {0} string variable lval 
+| | | INT "int" (5.23.46) {0} int param 
+| | | | DECLID "line" (5.23.50) {0} int variable lval 
+| PROTOTYPE "" (5.24.0) {0}  
+| | VOID "void" (5.24.0) {0} 
+| | | DECLID "putb" (5.24.5) {0} variable lval 
+| | PARAMLIST "(" (5.24.10) {0} param 
+| | | BOOL "bool" (5.24.11) {0} 
+| | | | DECLID "b" (5.24.16) {0} variable lval 
+| PROTOTYPE "" (5.25.0) {0}  
+| | VOID "void" (5.25.0) {0} 
+| | | DECLID "putc" (5.25.5) {0} variable lval 
+| | PARAMLIST "(" (5.25.10) {0} param 
+| | | CHAR "char" (5.25.11) {0} 
+| | | | DECLID "c" (5.25.16) {0} variable lval 
+| PROTOTYPE "" (5.26.0) {0}  
+| | VOID "void" (5.26.0) {0} 
+| | | DECLID "puti" (5.26.5) {0} variable lval 
+| | PARAMLIST "(" (5.26.10) {0} param 
+| | | INT "int" (5.26.11) {0} int 
+| | | | DECLID "i" (5.26.15) {0} int variable lval 
+| PROTOTYPE "" (5.27.0) {0}  
+| | VOID "void" (5.27.0) {0} 
+| | | DECLID "puts" (5.27.5) {0} variable lval 
+| | PARAMLIST "(" (5.27.10) {0} param 
+| | | STRING "string" (5.27.11) {0} string 
+| | | | DECLID "s" (5.27.18) {0} string variable lval 
+| PROTOTYPE "" (5.28.0) {0}  
+| | VOID "void" (5.28.0) {0} 
+| | | DECLID "endl" (5.28.5) {0} variable lval 
+| | PARAMLIST "(" (5.28.10) {0} param 
+| PROTOTYPE "" (5.29.0) {0}  
+| | INT "int" (5.29.0) {0} int 
+| | | DECLID "getc" (5.29.4) {0} int variable lval 
+| | PARAMLIST "(" (5.29.9) {0} param 
+| PROTOTYPE "" (5.30.0) {0}  
+| | STRING "string" (5.30.0) {0} string 
+| | | DECLID "getw" (5.30.7) {0} string variable lval 
+| | PARAMLIST "(" (5.30.12) {0} param 
+| PROTOTYPE "" (5.31.0) {0}  
+| | STRING "string" (5.31.0) {0} string 
+| | | DECLID "getln" (5.31.7) {0} string variable lval 
+| | PARAMLIST "(" (5.31.13) {0} param 
+| PROTOTYPE "" (5.32.0) {0}  
+| | STRING "string" (5.32.0) {0} string  
+| | | NEWARRAY "[]" (5.32.6) {0} string 
+| | | DECLID "getargv" (5.32.9) {0} string variable lval 
+| | PARAMLIST "(" (5.32.17) {0} param 
+| PROTOTYPE "" (5.33.0) {0}  
+| | VOID "void" (5.33.0) {0} 
+| | | DECLID "exit" (5.33.5) {0} variable lval 
+| | PARAMLIST "(" (5.33.10) {0} param 
+| | | INT "int" (5.33.11) {0} int 
+| | | | DECLID "status" (5.33.15) {0} int variable lval 
+| VARDECL "=" (6.5.11) {0} variable lval  
+| | INT "int" (6.5.0) {0} int 
+| | | DECLID "number" (6.5.4) {0} int variable lval 
+| | INTCON "1" (6.5.13) {0} int const 
+| WHILE "while" (6.6.0) {0}  
+| | GT ">" (6.6.14) {0}  
+| | | IDENT "number" (6.6.7) {0} 
+| | | INTCON "0" (6.6.16) {0} int const 
+| | BLOCK "{" (6.6.19) {0}   
+| | | CALL "(" (6.7.8) {0}  
+| | | | IDENT "puti" (6.7.3) {0} 
+| | | | IDENT "number" (6.7.9) {0} 
+| | | CALL "(" (6.8.8) {0}  
+| | | | IDENT "putc" (6.8.3) {0} 
+| | | | CHARCON "'\n'" (6.8.9) {0} char const 
+| | | '=' "=" (6.9.10) {0}  
+| | | | IDENT "number" (6.9.3) {0} 
+| | | | '+' "+" (6.9.19) {0}  
+| | | | | IDENT "number" (6.9.12) {0} 
+| | | | | IDENT "number" (6.9.21) {0} 
+| CALL "(" (6.11.5) {0}  
+| | IDENT "puti" (6.11.0) {0} 
+| | IDENT "number" (6.11.6) {0} 
+| CALL "(" (6.12.5) {0}  
+| | IDENT "putc" (6.12.0) {0} 
+| | CHARCON "'\n'" (6.12.6) {0} char const 

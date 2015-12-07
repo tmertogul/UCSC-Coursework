@@ -1,0 +1,15 @@
+[] (3.7.3) {0} int 
+[] (3.8.9) {0} struct "reference" 
+foo (3.9.5) {0} variable lval 
+
+foo (3.10.5) {0} variable lval 
+  a (3.10.14) {1} int variable lval 
+
+foo (3.11.5) {0} variable lval 
+  [] (3.11.13) {1} int 
+  [] (3.11.22) {1} int 
+
+  x (3.11.33) {1} int variable lval 
+
+int (3.7.8) {0} variable lval 
+

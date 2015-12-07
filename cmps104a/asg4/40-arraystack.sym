@@ -1,0 +1,54 @@
+__assert_fail (5.23.5) {0} variable lval 
+  expr (5.23.27) {1} string variable lval 
+  file (5.23.40) {1} string variable lval 
+  line (5.23.50) {1} int variable lval 
+
+putb (5.24.5) {0} variable lval 
+  b (5.24.16) {1} variable lval 
+
+putc (5.25.5) {0} variable lval 
+  c (5.25.16) {1} variable lval 
+
+puti (5.26.5) {0} variable lval 
+  i (5.26.15) {1} int variable lval 
+
+puts (5.27.5) {0} variable lval 
+  s (5.27.18) {1} string variable lval 
+
+endl (5.28.5) {0} variable lval 
+
+getc (5.29.4) {0} int variable lval 
+
+getw (5.30.7) {0} string variable lval 
+
+getln (5.31.7) {0} string variable lval 
+
+[] (5.32.6) {0} string 
+
+exit (5.33.5) {0} variable lval 
+  status (5.33.15) {1} int variable lval 
+
+void (5.23.0) {0} 
+
+new_stack (6.13.6) {0} struct "stack" variable lval 
+  size (6.13.21) {1} int variable lval 
+
+  stack (6.14.9) {1} struct "stack" variable lval 
+
+push (6.21.5) {0} variable lval 
+  stack (6.21.17) {1} struct "stack" variable lval 
+  str (6.21.31) {1} string variable lval 
+
+
+pop (6.27.7) {0} string variable lval 
+  stack (6.27.18) {1} struct "stack" variable lval 
+
+  tmp (6.29.10) {3} string variable lval 
+
+empty (6.34.5) {0} variable lval 
+  stack (6.34.18) {1} struct "stack" variable lval 
+
+
+[] (6.39.6) {0} string 
+stack (6.40.6) {0} struct "stack" variable lval 
+argi (6.42.4) {0} int variable lval 

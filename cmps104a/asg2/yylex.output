@@ -1,0 +1,22 @@
+flex version 2.5.35 usage statistics:
+  scanner options: -dpsvI8 -Cem -oyylex.cc
+  288/2000 NFA states
+  104/1000 DFA states (575 words)
+  50 rules
+  Compressed tables always back-up
+  1/40 start conditions
+  163 epsilon states, 68 double epsilon states
+  19/100 character classes needed 238/500 words of storage, 0 reused
+  1680 state/nextstate pairs created
+  271/1409 unique/duplicate transitions
+  110/1000 base-def entries created
+  180/2000 (peak 320) nxt-chk entries created
+  24/2500 (peak 276) template nxt-chk entries created
+  0 empty table entries
+  6 protos created
+  6 templates created, 69 uses
+  46/256 equivalence classes created
+  4/256 meta-equivalence classes created
+  1 (1 saved) hash collisions, 170 DFAs equal
+  0 sets of reallocations needed
+  882 total table entries needed

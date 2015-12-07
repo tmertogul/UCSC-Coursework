@@ -1,0 +1,8 @@
+oc: 40-arraystack.oc: 13: syntax error, unexpected TOK_IDENT
+oc: 40-arraystack.oc: 19: syntax error, unexpected '}'
+oc: 40-arraystack.oc: 21: syntax error, unexpected TOK_IDENT
+oc: 40-arraystack.oc: 25: syntax error, unexpected '}'
+oc: 40-arraystack.oc: 27: syntax error, unexpected TOK_IDENT
+oc: 40-arraystack.oc: 32: syntax error, unexpected '}'
+oc: 40-arraystack.oc: 34: syntax error, unexpected TOK_IDENT
+oc: 40-arraystack.oc: 40: syntax error, unexpected TOK_IDENT

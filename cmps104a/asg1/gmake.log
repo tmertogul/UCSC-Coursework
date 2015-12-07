@@ -1,0 +1,6 @@
+Makefile:47: Makefile.deps: No such file or directory
+g++ -MM -std=gnu++11 auxlib.cpp stringset.cpp main.cpp  >Makefile.deps
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c auxlib.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c stringset.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c main.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -ooc auxlib.o stringset.o main.o
