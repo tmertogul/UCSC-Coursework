@@ -1,0 +1,62 @@
+Script started on Thu 11 Jun 2015 02:14:09 AM PDT
+bash: export: `56813': not a valid identifier
+[?1034hbash-4.1$ ../cix localhost 8675
+cix(22135): starting
+cix(22135): unix2.lt.ucsc.edu (128.114.104.230)
+cix(22135): connecting to localhost port 8675
+cix(22135): connected to localhost (127.0.0.1) port 8675
+ls
+cix(22135): command ls
+cmd: ls
+fname: ls
+cix(22135): sending header {0,CIX_LS=4,""}
+cix(22135): received header {180,CIX_LSOUT=8,""}
+cix(22135): received 180 bytes
+total 400
+-rwxr-xr-x. 1 mdbiundo users 407309 Jun 11 02:12 cixd
+-rw-------. 1 mdbiundo users    858 Jun 11 01:57 server1
+-rw-------. 1 mdbiundo users    280 Jun 11 01:57 to-remove
+put localfile
+cix(22135): command put localfile
+cmd: put
+fname: localfile
+cix(22135): sending header {516,CIX_PUT=5,"localfile"}
+cix(22135): received header {516,CIS_ACK=9,"localfile"}
+returned ACK, put successful
+put localtto
+cix(22135): command put localtto
+cmd: put
+fname: localtto
+cix(22135): sending header {644,CIX_PUT=5,"localtto"}
+cix(22135): received header {644,CIS_ACK=9,"localtto"}
+returned ACK, put successful
+ls
+cix(22135): command ls
+cmd: ls
+fname: ls
+cix(22135): sending header {0,CIX_LS=4,""}
+cix(22135): received header {297,CIX_LSOUT=8,""}
+cix(22135): received 297 bytes
+total 402
+-rwxr-xr-x. 1 mdbiundo users 407309 Jun 11 02:12 cixd
+-rw-r--r--. 1 mdbiundo users    516 Jun 11 02:15 localfile
+-rw-r--r--. 1 mdbiundo users    644 Jun 11 02:15 localtto
+-rw-------. 1 mdbiundo users    858 Jun 11 01:57 server1
+-rw-------. 1 mdbiundo users    280 Jun 11 01:57 to-remove
+exit
+cix(22135): command exit
+cmd: exit
+fname: exit
+cix(22135): caught cix_exit
+cix(22135): finishing
+bash-4.1$ ls -la
+total 6
+drwx------. 2 mdbiundo users 2048 Jun 11 02:14 .
+drwx------. 7 tmertogu users 2048 Jun 11 01:59 ..
+-rw-r--r--. 1 mdbiundo users    0 Jun 11 02:14 client1.log1
+-rw-------. 1 mdbiundo users  516 Jun 11 01:57 localfile
+-rw-------. 1 mdbiundo users  644 Jun 11 01:57 localtto
+bash-4.1$ exit
+exit
+
+Script done on Thu 11 Jun 2015 02:16:53 AM PDT

@@ -1,0 +1,8 @@
+Makefile:79: Makefile.dep: No such file or directory
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -MM sockets.cpp protocol.cpp  cix.cpp cixd.cpp >Makefile.dep
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c cix.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c sockets.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c protocol.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -o cix cix.o sockets.o protocol.o
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -c cixd.cpp
+g++ -g -O0 -Wall -Wextra -std=gnu++11 -o cixd cixd.o sockets.o protocol.o

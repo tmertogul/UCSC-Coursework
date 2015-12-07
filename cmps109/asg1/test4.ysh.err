@@ -1,0 +1,4 @@
+yshell: error: root: Directory or File does not exist
+yshell: make: make: File already exists as directory
+yshell: cd: foo: No such file or directory
+yshell: usage: lsr pathname

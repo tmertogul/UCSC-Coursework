@@ -1,0 +1,65 @@
+==24910== Memcheck, a memory error detector
+==24910== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==24910== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==24910== Command: ./yshell
+==24910== 
+yshell: Bad: no such function
+==24910== 
+==24910== HEAP SUMMARY:
+==24910==     in use at exit: 1,488 bytes in 34 blocks
+==24910==   total heap usage: 321 allocs, 287 frees, 11,664 bytes allocated
+==24910== 
+==24910== 26 bytes in 1 blocks are possibly lost in loss record 1 of 12
+==24910==    at 0x4A076A5: operator new(unsigned long) (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24910==    by 0x38AE29C3C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (new_allocator.h:89)
+==24910==    by 0x38AE29CDE4: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:139)
+==24910==    by 0x38AE29CF32: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (basic_string.h:1543)
+==24910==    by 0x426E11: directory::init_root(std::shared_ptr<inode>) (inode.cpp:227)
+==24910==    by 0x42788F: inode_state::inode_state() (inode.cpp:341)
+==24910==    by 0x42D7D2: main (main.cpp:62)
+==24910== 
+==24910== 53 bytes in 2 blocks are possibly lost in loss record 2 of 12
+==24910==    at 0x4A076A5: operator new(unsigned long) (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24910==    by 0x38AE29C3C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (new_allocator.h:89)
+==24910==    by 0x38AE29CDE4: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:139)
+==24910==    by 0x38AE29CF32: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (basic_string.h:1543)
+==24910==    by 0x428298: std::pair<std::string const, std::shared_ptr<inode> >::pair<char const*, std::shared_ptr<inode>, void>(std::pair<char const*, std::shared_ptr<inode> >&&) (in /afs/cats.ucsc.edu/class/cmps109-wm.s15/.admin/asg1/tmertogu/yshell)
+==24910==    by 0x42BE18: std::_Rb_tree_node<std::pair<std::string const, std::shared_ptr<inode> > >::_Rb_tree_node<std::pair<char const*, std::shared_ptr<inode> > >(std::pair<char const*, std::shared_ptr<inode> >&&) (stl_tree.h:140)
+==24910==    by 0x42BAC5: _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKSsSt10shared_ptrI5inodeEEEE9constructIS8_IS2_IPKcS6_EEEEvPT_DpOT0_ (in /afs/cats.ucsc.edu/class/cmps109-wm.s15/.admin/asg1/tmertogu/yshell)
+==24910==    by 0x42B78D: _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKSsSt10shared_ptrI5inodeEEEEE12_S_constructIS7_IS1_IPKcS5_EEEENSt9enable_ifIXsrNS9_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS8_PSG_DpOSH_ (alloc_traits.h:254)
+==24910==    by 0x42B1EC: _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKSsSt10shared_ptrI5inodeEEEEE9constructIS7_IS1_IPKcS5_EEEEDTcl12_S_constructfp_fp0_spcl7forwardIT0_Efp1_EEERS8_PT_DpOSE_ (alloc_traits.h:393)
+==24910==    by 0x42AA15: std::_Rb_tree_node<std::pair<std::string const, std::shared_ptr<inode> > >* std::_Rb_tree<std::string, std::pair<std::string const, std::shared_ptr<inode> >, std::_Select1st<std::pair<std::string const, std::shared_ptr<inode> > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::shared_ptr<inode> > > >::_M_create_node<std::pair<char const*, std::shared_ptr<inode> > >(std::pair<char const*, std::shared_ptr<inode> >&&) (stl_tree.h:406)
+==24910==    by 0x429F86: std::_Rb_tree_iterator<std::pair<std::string const, std::shared_ptr<inode> > > std::_Rb_tree<std::string, std::pair<std::string const, std::shared_ptr<inode> >, std::_Select1st<std::pair<std::string const, std::shared_ptr<inode> > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::shared_ptr<inode> > > >::_M_insert_<std::pair<char const*, std::shared_ptr<inode> > >(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<char const*, std::shared_ptr<inode> >&&) (stl_tree.h:1023)
+==24910==    by 0x429282: std::pair<std::_Rb_tree_iterator<std::pair<std::string const, std::shared_ptr<inode> > >, bool> std::_Rb_tree<std::string, std::pair<std::string const, std::shared_ptr<inode> >, std::_Select1st<std::pair<std::string const, std::shared_ptr<inode> > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::shared_ptr<inode> > > >::_M_insert_unique<std::pair<char const*, std::shared_ptr<inode> > >(std::pair<char const*, std::shared_ptr<inode> >&&) (stl_tree.h:1382)
+==24910== 
+==24910== 90 bytes in 3 blocks are possibly lost in loss record 7 of 12
+==24910==    at 0x4A076A5: operator new(unsigned long) (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24910==    by 0x38AE29C3C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (new_allocator.h:89)
+==24910==    by 0x38AE29CFB4: char* std::string::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:139)
+==24910==    by 0x38AE29D118: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&, unsigned long, unsigned long) (basic_string.h:1543)
+==24910==    by 0x38AE29D151: std::string::substr(unsigned long, unsigned long) const (basic_string.h:2003)
+==24910==    by 0x42D17C: split(std::string const&, std::string const&) (util.cpp:61)
+==24910==    by 0x41DE50: path_set(inode_state&, std::vector<std::string, std::allocator<std::string> >&) (commands.cpp:73)
+==24910==    by 0x42028B: fn_make(inode_state&, std::vector<std::string, std::allocator<std::string> > const&) (commands.cpp:360)
+==24910==    by 0x42D9C1: main (main.cpp:85)
+==24910== 
+==24910== 343 bytes in 12 blocks are possibly lost in loss record 12 of 12
+==24910==    at 0x4A076A5: operator new(unsigned long) (in /opt/rh/devtoolset-2/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24910==    by 0x38AE29C3C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (new_allocator.h:89)
+==24910==    by 0x38AE29CFB4: char* std::string::_S_construct<char*>(char*, char*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:139)
+==24910==    by 0x38AE29D118: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&, unsigned long, unsigned long) (basic_string.h:1543)
+==24910==    by 0x38AE29D151: std::string::substr(unsigned long, unsigned long) const (basic_string.h:2003)
+==24910==    by 0x42D17C: split(std::string const&, std::string const&) (util.cpp:61)
+==24910==    by 0x42D90D: main (main.cpp:82)
+==24910== 
+==24910== LEAK SUMMARY:
+==24910==    definitely lost: 0 bytes in 0 blocks
+==24910==    indirectly lost: 0 bytes in 0 blocks
+==24910==      possibly lost: 512 bytes in 18 blocks
+==24910==    still reachable: 976 bytes in 16 blocks
+==24910==         suppressed: 0 bytes in 0 blocks
+==24910== Reachable blocks (those to which a pointer was found) are not shown.
+==24910== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==24910== 
+==24910== For counts of detected and suppressed errors, rerun with: -v
+==24910== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 6 from 6)

@@ -1,0 +1,6 @@
+partnercheck: ./PARTNER: format OK:
+user    = mimlowe
+uid     = 38378
+gecos   = Michael Martin Lowe
+home    = /afs/cats.ucsc.edu/users/t/mimlowe
+shell   = /bin/csh
