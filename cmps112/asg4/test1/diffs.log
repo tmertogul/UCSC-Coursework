@@ -1,0 +1,4 @@
+15c15
+< make: *** [bad] Error 1
+---
+> pmake: cc bad.c -o bad Error 256 at ./pmake line 325.

@@ -1,0 +1,4 @@
+#!/bin/sh -x
+# $Id: Check,v 1.1 2011-03-24 17:20:58-07 - - $
+pmake -f Makefile1 >make1.log 2>&1
+pmake -f Makefile2 >make2.log 2>&1

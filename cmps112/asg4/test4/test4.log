@@ -1,0 +1,5 @@
++ rm hello
+rm: cannot remove `hello': No such file or directory
++ pmake spotless
++ pmake ci
++ pmake

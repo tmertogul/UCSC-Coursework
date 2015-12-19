@@ -1,0 +1,13 @@
+#!/bin/sh -x
+# $Id: runchecks,v 1.4 2014-10-03 16:31:55-07 - - $
+export PATH=$PATH:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin/
+checksource pmake >checksource.log 2>&1
+exec >check.log 2>&1
+PATH=$PATH:`pwd`
+export PATH
+for dir in `pwd`/test?
+do
+   cd $dir
+   pwd
+   ./Check
+done

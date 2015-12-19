@@ -1,0 +1,9 @@
+cc -D__EXTENSIONS__ -Xc -v -g -xO0 -c main.c
+Using built-in specs.
+COLLECT_GCC=cc
+cc: error: unrecognized command line option ‘-Xc’
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/opt/rh/devtoolset-3/root/usr --mandir=/opt/rh/devtoolset-3/root/usr/share/man --infodir=/opt/rh/devtoolset-3/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --enable-languages=c,c++,fortran,lto --enable-plugin --with-linker-hash-style=gnu --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.9.2-20150212/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.9.2-20150212/obj-x86_64-redhat-linux/cloog-install --with-mpc=/builddir/build/BUILD/gcc-4.9.2-20150212/obj-x86_64-redhat-linux/mpc-install --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.9.2 20150212 (Red Hat 4.9.2-6) (GCC) 
+make: *** [main.o] Error 1

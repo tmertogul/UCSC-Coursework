@@ -1,0 +1,341 @@
+#!/usr/bin/perl
+#     Tim Mertogul tmertogu@ucsc.edu
+#     Sean McGrath ssmcgrat@ucsc.edu
+
+use strict;
+use warnings;
+use Getopt::Std;
+use Data::Dumper;
+
+# Linux x86_64 GNU/Linux
+my %strsignal = (
+    0 => "Unknown signal 0",
+    1 => "Hangup",
+    2 => "Interrupt",
+    3 => "Quit",
+    4 => "Illegal instruction",
+    5 => "Trace/breakpoint trap",
+    6 => "Aborted",
+    7 => "Bus error",
+    8 => "Floating point exception",
+    9 => "Killed",
+   10 => "User defined signal 1",
+   11 => "Segmentation fault",
+   12 => "User defined signal 2",
+   13 => "Broken pipe",
+   14 => "Alarm clock",
+   15 => "Terminated",
+   16 => "Stack fault",
+   17 => "Child exited",
+   18 => "Continued",
+   19 => "Stopped (signal)",
+   20 => "Stopped",
+   21 => "Stopped (tty input)",
+   22 => "Stopped (tty output)",
+   23 => "Urgent I/O condition",
+   24 => "CPU time limit exceeded",
+   25 => "File size limit exceeded",
+   26 => "Virtual timer expired",
+   27 => "Profiling timer expired",
+   28 => "Window changed",
+   29 => "I/O possible",
+   30 => "Power failure",
+   31 => "Bad system call",
+   32 => "Unknown signal 32",
+   33 => "Unknown signal 33",
+);
+
+$0 =~ s|.*/||; 
+my $status = 0;
+END { exit $status; }
+$SIG{__WARN__} = sub {print STDERR "$0: @_"; $status = 1};
+$SIG{__DIE__} = sub {warn @_; $status = 1; exit};
+
+my %opts;
+getopts "dnf", \%opts;
+
+push @ARGV, "-" unless @ARGV;
+my @inputs = ();
+my @cmds = ();
+my @macros = ();
+my $makeFile = "Makefile";
+my $firstTarget;
+my $firstchk = 0;
+$0 =~ s|.*/||;
+
+# Print statements telling of flags
+print "Debug Mode - ON\n" if $opts{'d'};
+#print "Non-execution Mode - ON\n" if $opts{'n'};
+#print "Specific Makefile - ON\n" if $opts{'f'};
+$makeFile = $ARGV[0] if ($opts{'f'});
+if ($opts{'f'} and $ARGV[1]) {
+    $firstTarget = $ARGV[1];
+    $firstchk = 1; 
+}
+if (!$opts{'f'} and $ARGV[0] and $ARGV[0] ne "-") {
+    $firstTarget = $ARGV[0];
+    $firstchk = 1; 
+}
+
+my %depHash;
+my %cmdHash;
+my %macroHash;
+my $currTarget;
+my $here = 0;
+my $f_ext;
+my $f_nme;
+
+open my $file, "<$makeFile" or warn "$makeFile: $!\n" and next;
+while (defined (my $line = <$file>)) {
+    chomp $line;
+    my $firstChar = substr($line, 0, 1);
+    if($firstChar ne "#") {  ## ignore comment lines
+       if($line =~ /=/) {    ## if line is a macro = value line
+          if ($line =~ /\t/) {  }
+          else { push(@macros, $line); }
+       }
+       if($line =~ /\t/){    ## if line is a cmd line
+            $line =~ s/^\t*//;
+            ## append $currTarget to line for association
+            ## purposes later.
+            my $cmd_line = "$currTarget " . "$line";
+            if ($here) { pop @cmds; $here = 0; }
+            push(@cmds, $cmd_line);
+       } elsif ($line =~ /:/) {    ## if line is a target : prereq line
+            substr($line, index($line, ":", 0), 0) = ' ';
+            my @words = split m/\s+/, $line;            
+            $currTarget = $words[0];   ## set the $currTarget
+            my %params = map { $_ => 1 } @inputs;
+            if(exists($params{$line})) { $here = 1; }
+            else { push(@inputs, $line); }
+            if($firstchk == 0) { $firstTarget = $currTarget; }
+            $firstchk = 1;
+        }        
+    }    
+}
+close $file;
+
+#######################################################################
+# Building hash table for macro-value pairs
+#######################################################################
+#print Dumper(\@macros);
+sub parse_mac ($) {
+    my ($line) = @_;
+    return undef unless $line =~ m/^(\S+)\s*=\s*(.*?)\s*$/;
+    my ($macro, $value) = ($1, ($2));
+    my @values = split m/\s+/, $value;
+    my @result_values = ();
+    foreach(@values) { push(@result_values, $_); }
+    return $macro, \@result_values;
+}
+
+for my $macro (@macros) {
+    my ($mac, $val) = parse_mac $macro;
+    #print("mac: $mac\n");
+    print "$0: syntax error: $macro\n" and next unless defined $mac; 
+    $macroHash{$mac} = $val;
+}
+
+#######################################################################
+# Building tha hash tables, some code from graph.perl
+#######################################################################
+sub parse_dep ($) {
+    my ($line) = @_;
+    return undef unless $line =~ m/^(\S+)\s*:\s*(.*?)\s*$/;
+    my ($target, $dependency) = ($1, ($2));
+    my @dependencies = split m/\s+/, $dependency;
+    my @result_deps = ();
+    if(substr($target, 0, 1) eq "\$") { 
+        my $tmp = substr($target, 2, (length($target)-3));
+        my @new_target = $macroHash{$tmp};
+        $target = "" .  "@{$new_target[0]}";  
+    }
+    foreach(@dependencies) {
+        my $first = substr($_, 0, 1);
+        if($first eq "\$") { 
+            my $variable = substr($_, 2, (length($_)-3) );
+         my @deps = $macroHash{$variable};
+         for(my $i=0; $i<@deps; $i++) {
+             my @array = $deps[$i];
+             for(my $j=0; $j<@array; $j++){
+                push(@result_deps, @{$array[$j]});
+             }
+         } 
+      }else { push(@result_deps, $_); } 
+    }
+    return $target, \@result_deps;
+}
+
+# Build hash table of targets and prereqs
+for my $input (@inputs) {
+    my ($target, $deps) = parse_dep $input;
+    print "$0: syntax error: $input\n" and next unless defined $target;
+    $depHash{$target} = $deps;
+}
+
+# Build hash table of targets and commands
+for my $target (keys %depHash) {
+    my @commands = ();
+    for my $cmd (@cmds) {
+        my $real_cmd = ""; ## for if there are macros in command
+        my $tmpTarget = substr( $cmd, 0, index( $cmd, ' '));
+        my $tmp = "";
+        my $command   = substr( $cmd, index( $cmd, ' ') + 1);
+        my @cmd_words = split m/\s+/, $command;
+        foreach(@cmd_words) { $real_cmd = "$real_cmd"."$_ "; } 
+        if( substr($tmpTarget, 0, 1) eq "\$" ) {   
+            my $tmp2 = substr($tmpTarget, 2, (length($tmpTarget)-3));
+            my @array2 = $macroHash{$tmp2};
+            foreach(@array2) { 
+                $tmpTarget = "@{$_}"; 
+            }  
+        }
+        if($target eq $tmpTarget) {
+            chop $real_cmd;
+            push(@commands, $real_cmd);
+        }
+    }
+    $cmdHash{$target} = \@commands;
+}
+
+# subroutine for extracting macros
+sub split_mac ($);
+sub split_mac ($) {
+    my @sys_words = split m/\s+/, $_;
+    my $sys_cmd = "";
+    foreach(@sys_words) { 
+        if($_ =~ /\$/){     
+            my $tmp = substr($_, 2, (length($_)-3));
+            #print("tmp: $tmp\n");
+            if (exists $macroHash{$tmp}){
+                my @array = $macroHash{$tmp};
+                foreach(@array) { 
+                    $sys_cmd = "$sys_cmd"."@{$_} "; 
+                }
+            } else { $sys_cmd = "$sys_cmd"."$_ "; }
+        }else{ $sys_cmd = "$sys_cmd"."$_ "; }
+    }
+    $_ = $sys_cmd;
+}
+
+sub less_mac ($);
+sub less_mac ($) {
+    my @sys_words = split m/\s+/, $_;
+    my $sys_cmd = "";
+    foreach(@sys_words) { 
+        if($_ =~ /\$/){  
+            if($_ =~ /</){
+                $f_ext = ".c" if $f_ext eq ".o";
+                $f_ext = ".java" if $f_ext eq ".class";
+                $f_ext =~ s/[^\.]*//;
+                $sys_cmd = "$sys_cmd"."$f_nme"."$f_ext ";
+            } 
+        }else{ $sys_cmd = "$sys_cmd"."$_ "; }
+    }
+    $_ = $sys_cmd;
+}
+sub dolla_mac ($);
+sub dolla_mac ($) {
+    my @sys_words = split m/\s+/, $_;
+    my $sys_cmd = "";
+    foreach(@sys_words) { 
+        if($_ =~ /\$\$/){ $_ =~ s/\$//; }
+        $sys_cmd = "$sys_cmd"."$_ "; 
+    }
+    $_ = $sys_cmd;
+}
+
+
+#######################################################################
+# Navigating the hash tables to execute commands
+# #####################################################################
+
+sub navCommands ($); # need to declare ahead of time for some reason
+# Subroutine to navigating depHash to print
+# and possibly execute commands
+sub navCommands ($) {
+    my ($target) = @_; 
+    #print("target: $target\n");
+    my $tmp = $cmdHash{$target};
+    #print("tmp: @{$tmp}\n");
+    my @prereqs = ($depHash{$target}); 
+    foreach(@prereqs){
+        my @preq = @{ $_ } if $_;
+        #print("preq: @preq\n");
+        #print("_: $_\n");
+        
+        foreach(@preq) {
+            # i believe a second test case is needed here
+            # for other test files (such as test1) 
+            if(-e $_) { #print("$_ exists!\n"); 
+            } elsif($cmdHash{$_}) { 
+                $f_ext = join(" ",@{$depHash{$_}});
+                $f_ext =~ s/[^\.]*//;
+                navCommands($_); 
+            } else { 
+                $f_ext = $_; 
+                if($_ =~ /%/){ }
+                else {
+                    $f_nme = $_;
+                    $f_nme =~ s/[\.].*//;
+                }
+                $f_ext =~ s/[^\.]*//;
+                $f_ext = '%'."$f_ext";
+                if($cmdHash{$f_ext}) { navCommands($f_ext); }
+            }
+        }
+    } 
+    if (!@{$cmdHash{$target}}) {
+        $f_ext = $target; $f_nme = $target;
+        $f_ext =~ s/[^\.]*//;
+        $f_nme =~ s/[\.].*//;
+        $target = "\%". $f_ext;
+        $tmp = $cmdHash{$target};
+    }
+    # before returning from recursion, execute commands. 
+    foreach($tmp) { 
+        my @list = @{$tmp} if $tmp;
+        foreach(@list) { 
+            my $b = 0;
+            if($_ =~ /- /){
+                $_ =~ s/^- *//;
+                $b = 1;
+            }
+            while($_ =~ /\${/) {
+                my @sys_words = split m/\s+/, $_;
+                $_ = split_mac @sys_words; 
+                chop $_;
+            }
+            while($_ =~ /\$</) {
+                my @sys_words = less_mac m/\s+/ . $_;
+                $_ = less_mac @sys_words; 
+                chop $_;
+            }
+
+            while($_ =~ /\$\$/) {
+                my @sys_words = dolla_mac m/\s+/ . $_;
+                $_ = dolla_mac @sys_words; 
+                chop $_;
+            }
+
+            print $_, "\n";
+            if ( !$opts{'n'} ) { 
+                if($b) { $b = 0; system($_)== 0 
+                      or print "pmake: [***] Error $? (ignored)\n"; }
+                else { system($_) == 0 or die "$_ Error $?"; }
+            }
+        }
+    } 
+}
+
+#print Dumper(\%macroHash);
+#print Dumper(\%depHash);
+#print Dumper(\%cmdHash);
+
+navCommands($firstTarget); # navigate depHash
+
+
+
+
+
+

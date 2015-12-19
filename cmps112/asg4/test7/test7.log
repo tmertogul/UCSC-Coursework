@@ -1,0 +1,2 @@
++ pmake -f Makefile1
++ pmake -f Makefile2

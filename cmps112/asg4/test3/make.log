@@ -1,0 +1,7 @@
+cc -c main.c
+cc -c hello.c
+hello.c: In function ‘hello’:
+hello.c:6:4: warning: incompatible implicit declaration of built-in function ‘printf’
+    printf ("Hello, world.\n");
+    ^
+cc main.o hello.o -o hello

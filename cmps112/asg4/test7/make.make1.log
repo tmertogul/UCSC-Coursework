@@ -1,0 +1,2 @@
+echo second %.o : %.c
+second %.o : %.c

@@ -1,0 +1,77 @@
+++ pwd
++ PATH=/usr/lib64/qt-3.3/bin:/opt/rh/devtoolset-3/root/usr/bin:/opt/rh/rh-java-common/root/usr/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/texlive/2012/bin/x86_64-linux:/usr/local/python3/bin:/usr/local/codebench/bin:/afs/cats.ucsc.edu/users/s/astolman/bin:.:/afs/cats.ucsc.edu/courses/cmps112-wm/usr/ocaml/bin/:/afs/cats.ucsc.edu/courses/cmps112-wm/bin/:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin/:/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu
++ export PATH
+++ pwd
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test0
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test0
++ ./Check
+echo foo
+foo
+echo bar
+bar
+echo all
+all
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test1
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test1
++ ./Check
++ rm hello
+rm: cannot remove `hello': No such file or directory
++ pmake
++ pmake bad
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test2
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test2
++ ./Check
++ rm hello
+rm: cannot remove `hello': No such file or directory
++ pmake spotless
++ pmake ci
++ pmake
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test3
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test3
++ ./Check
++ rm hello
+rm: cannot remove `hello': No such file or directory
++ pmake spotless
++ pmake ci
++ pmake
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test4
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test4
++ ./Check
++ rm hello
+rm: cannot remove `hello': No such file or directory
++ pmake spotless
++ pmake ci
++ pmake
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test5
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test5
++ ./Check
++ rm hello
+rm: cannot remove `hello': No such file or directory
++ pmake spotless
++ pmake ci
++ pmake all
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test6
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test6
++ ./Check
++ pmake
++ for dir in '`pwd`/test?'
++ cd /afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test7
++ pwd
+/afs/cats.ucsc.edu/class/cmps112-wm.f15/.admin/asg4/tmertogu/test7
++ ./Check
++ pmake -f Makefile1
++ pmake -f Makefile2

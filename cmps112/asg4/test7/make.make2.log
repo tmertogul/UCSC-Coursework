@@ -1,0 +1,2 @@
+echo specific foo.o : foo.c
+specific foo.o : foo.c

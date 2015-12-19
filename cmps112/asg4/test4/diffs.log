@@ -1,0 +1,12 @@
+9c9
+< make: *** [main.o] Error 1
+---
+> pmake: cc -D__EXTENSIONS__ -Xc -v -g -xO0 -c main.c Error 256 at ./pmake line 325.
+4c4
+< make: [clean] Error 1 (ignored)
+---
+> pmake: [***] Error 256 (ignored)
+7c7
+< make: [spotless] Error 1 (ignored)
+---
+> pmake: [***] Error 256 (ignored)
