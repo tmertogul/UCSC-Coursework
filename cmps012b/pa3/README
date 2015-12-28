@@ -1,0 +1,18 @@
+# Tim Mertogul
+# * 1331402
+# * CMPS12B
+# * 07/23/13
+# * README file listing files turned into pa3
+# * README
+# */
+
+README
+Dictionary.java
+DictionaryTest.java
+KeyCollisionException.java
+KeyNotFoundException.java
+DictionaryInterface.java
+DictionaryClient.java
+makefile
+
+

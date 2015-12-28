@@ -1,0 +1,16 @@
+/* Tim Mertogul
+ * 1331402
+ * CMPS12B
+ * 08/16/13
+ * Dictionary ADT program that implements methods using BST
+ * Dictionary.java 
+ */
+
+README
+makefile
+DictionaryInterface.java
+KeyCollisionException.java
+KeyNotFoundException.java
+DictionaryClient.java
+Dictionary.java
+
