@@ -1,0 +1,13 @@
+Tim Mertogul
+CMPS101 Summer 2014
+07/09/14
+
+README - file containing list of submitted files + special notes.
+List.c  List ADT for project
+List.h  List Header for ADT for project
+ListClient.c (unaltered client for List.c)
+Lex.c - main client for List.java, alphabetices input file
+Makefile - creates executable jar file called "Lex"
+
+
+

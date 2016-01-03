@@ -1,0 +1,16 @@
+/*
+
+Tim Mertogul
+CMPS101 Summer 2014
+07/19/14
+
+README - file containing list of submitted files + special notes.
+List.java  List ADT for project
+ListTest.java testing list in isolation
+MatrixTest.java testing matrix adt in isolation
+Sparse.java - handles input and output files
+Matrix.java - client of list
+Makefile - creates executable jar file called "Sparse"
+
+
+*/

@@ -1,0 +1,25 @@
+/*
+
+Tim Mertogul
+1331402
+tmertogu
+CMPS101 Summer 2014
+08/11/14
+PA5
+README
+
+List.c  List ADT for project
+List.h  List Header for ADT for project
+Graph.c  Graph ADT for project
+Graph.h  Graph Header for ADT for project
+GraphTest.c tests Graph operations in isolation
+FindComponents.c Client Program for Graph ADT
+Makefile - creates executable jar file called "FindComponents"
+README - file containing list of submitted files + special notes.
+
+
+note to grader: my DFS works as far as my testing shows, however my function for finding SCC's only works 1/4 of the time, I have it printing to STDOUT and to the outfile just so that you may see how far it gets before finding a Segmentation fault that I'm unable to figure out.  Obviously if it succeeds (as with in1 and in4) it will write to the outfile.
+
+thanks!
+
+*/
