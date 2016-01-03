@@ -1,0 +1,16 @@
+#/* Tim Mertogul
+# * 1331402
+# * CMPS12B
+# * 08/15/13
+# * README file listing files turned into pa5
+# * README
+# */
+
+README
+makefile
+Dictionary.c
+DictionaryTest.c
+Dictionary.h
+DictionaryClient.c
+
+
