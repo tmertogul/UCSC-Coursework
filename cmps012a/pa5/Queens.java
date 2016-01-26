@@ -43,9 +43,7 @@ class Queens{
       else if(args.length >= 3){
          stderr(0);
       }
-      
       int[] list = new int[n+1];
-
       makeArray(list); 
       for(i=1; i<=factorial(n); i++){
          if(isSolution(list)){
@@ -54,20 +52,18 @@ class Queens{
                printArray(list);
             }
          } 
-      nextPermutation(list);
+         nextPermutation(list);
       }
       boolean solutions = false;
       
       System.out.println(n+"-Queens has "+ns+" solutions");
    
    } 
-
    static void stderr(int a){
       System.out.println("Usage: Queens [-v] number");
       System.out.println("Option: -v verbose output, print all solutions");
       System.exit(0);
    }   
-
    static void makeArray(int[] A){
       int i, n;
 
@@ -75,7 +71,6 @@ class Queens{
          A[i] = i;
       }
    }
-
    static void printArray(int [] A){
       int i;
 
@@ -92,8 +87,6 @@ class Queens{
       }
       System.out.println("");
    }
-
-   
    static void swap(int[] A, int i, int j){
       int n=A.length, t;
       if(i>=0 && j>=0 && i<n && j<n){
@@ -105,8 +98,6 @@ class Queens{
       }
       return;
    }
- 
-
    static void nextPermutation(int[] A){
       int pivot = 0, successor = 0, end=0;
       int j=A.length-1;
@@ -125,23 +116,9 @@ class Queens{
             successor = i;
          }
       }
-   
-     // for(int i=A.length-1; i>0; i--){
-       //  if(A[i] > A[pivot])
-         //   successor = i;
-           // break;
-//         }
-  //       int Stiffy = A[pivot];
-    //     A[pivot] = A[successor];
-      //   A[successor] = Stiffy;
-
-       swap(A, pivot, successor);
-       reverse(A, pivot+1, A.length-1);
-    //  return;
-
+      swap(A, pivot, successor);
+      reverse(A, pivot+1, A.length-1);
    }
-
-
    static boolean isSolution(int[] A){
       boolean positive = true;
       int H, D, a;
@@ -156,9 +133,6 @@ class Queens{
       }         
    return positive;
    }
-
-
-
    static void reverse(int[] A, int i, int j){
       while(i<j) {
          swap(A,i,j);
@@ -166,8 +140,6 @@ class Queens{
          j--;
       }
    }
-
-   
    static int factorial(int n){
       int f = 1, i = 1;
          while(i<=n){
@@ -176,8 +148,4 @@ class Queens{
          }
       return f;
    }
-  
-
-
-
 }
