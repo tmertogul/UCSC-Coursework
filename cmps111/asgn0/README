@@ -1,0 +1,12 @@
+Tim Mertogul
+tmertogu@ucsc.edu
+CMPS 111, Winter 16
+ASG0 - Cat Program
+
+This assignment is a basic cat program.
+The makefile builds an executable called "cat"
+To test this program:
+   make
+   ./cat in1 in2 in3 in4
+The program will print the contents of in1, in2, in4 while 
+showing an error for missing in3.

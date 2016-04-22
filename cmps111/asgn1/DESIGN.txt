@@ -1,0 +1,59 @@
+Tim Mertogul
+tmertogu@ucsc.edu
+CMPS 111, Winter 16
+ASG1 - Simple Shell
+
+Design Doc
+
+Purpose
+   Create a simple shell that executes system calls and commands.
+   Special characters include: '>'  '<'  '|'
+   '>' redirects output to a specific file
+   '<' redirects input from a specific file
+   '|' pipes the output from the previous process into the input for the next process
+
+Functions
+   main()  // main function, creates the while(1) shell
+      print prompt
+      parse the line using getline and lex.l (provided by Dr. Long) into "args"
+      create a new process using fork(), assing to pid
+      handle the cases of pid
+         -1     error
+          0     child process, call function child_fork and pass it "args"
+       default  parent process, wait for child to finish
+
+   child_fork()  //takes in the "args"
+      loop thru every arg and handle depending on a certain way
+        '>'   use open(), dup2(), close() to either write to, or create then write too
+              the provided filename (arg[i+1])
+        '<'   use open(), dup2() to read from the provided filename (arg[i+1])
+        '|'   use pipe(), dup2(), close() to recursively pipe the output from the child
+              process to its parent process, ending the recursion when there are no more 
+              pipes in the list of arguments
+              the pipe connects the child's output (1) and the parent's input (0)
+              the parent process must waitpid() until its child process completes
+      default  proceed to next arg
+      then execute the arguments using execvp()
+
+Algorithms
+   The only non trivial algorithm is the recursive way pipes are handled.
+   child_fork() calls itself and pipes from child to parent every time it finds a '|'
+   This allows the processes to complete, close, then fork() new child processes as 
+   needed in order to follow the progression of commands within the args.
+
+
+Testing
+   The following commands were tested in MyShell by comparing their results with those of
+   the shell in FreeBSD
+
+   exit                                     pass.
+   ls                                       pass.
+   ls -l                                    pass.
+   ls -l > file                             pass.
+   sort < scores                            pass.
+   ls -l | more                             pass.
+   cat < file | wc > out                    pass.
+   cat file|fmt -1|wc                       pass.
+   cat file|fmt -1|sort|uniq|wc             pass.
+
+
