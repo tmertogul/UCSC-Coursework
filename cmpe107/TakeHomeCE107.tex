@@ -1,0 +1,361 @@
+%==========================================================================
+% CE107 Take Home Final Spring 2015
+%==========================================================================
+
+% Headers
+\documentclass[12pt]{article}
+\usepackage{graphics}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{xcolor, graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{parskip}
+\usepackage{amsthm}
+\usepackage[margin=1.5cm]{geometry}
+
+\title{\textbf{Take-Home Exam}}
+\author{Tim Mertogul\\tmertogu@ucsc.edu\\CMPE 107 Spring 2015\\UC Santa Cruz}
+
+\begin{document}
+
+  %------------------------------------------------------------------------
+  % Page 1
+  %------------------------------------------------------------------------
+
+  \maketitle
+  \pagebreak
+  \section*{Problem 1 }   
+ 
+  \subsection*{(a)} 
+
+  $\operatorname{Var} \left({X}\right) = E \left({X^2}\right) - {E^{2} \left({X}\right)}$
+    
+  $E \left({X}\right) = \dfrac p {1-p}$
+  
+  $E^{2} \left({X}\right) = \dfrac {p^2} {{1-p}^{2}}$
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle \sum_{k = 1}^{\infty} k^2 p^{k} (1-p)\) \(=\) \(\displaystyle \sum_{k = 1}^{\infty} {(k-1+1)}^2 p^{k} (1-p)\)
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle \sum_{k = 1}^{\infty} {((k-1)^2+2(k-1)+1))} p^{k}(1-p)\)   
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle p^{}(1-p) \sum_{k = 1}^{\infty} {p^{k-1}((k-1)^2+2(k-1)+1))} \)   
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle p^{}(1-p) \left( \sum_{k = 1}^{\infty} {p^{k-1}(k-1)^2} +2 \sum_{k = 1}^{\infty} {p^{k-1}(k-1)} + \sum_{k = 1}^{\infty} {p^{k-1}}\right) \)   
+
+Substitute j = k-1
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle p^{}(1-p) \left( \sum_{j = 0}^{\infty} {p^{j}j^2} +2 \sum_{j = 0}^{\infty} {p^{j}j} + \sum_{j = 0}^{\infty} {p^{j}}\right) \)   
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle p^{} \left( \sum_{j = 0}^{\infty} {p^{j}j^2}(1-p) +2 \sum_{j = 0}^{\infty} {p^{j}j}(1-p) + \sum_{j = 0}^{\infty} {p^{j}(1-p)}\right) \)   
+
+Substitute $E \left({X^{2}}\right), E^{} \left({X}\right), \sum_{j = 0}^{\infty} {p^{j}(1-p)} = 1$
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle p^{} \left( E \left({X^{2}}\right) +2 E^{} \left({X}\right) + 1\right) \)  \(=\) \(\displaystyle   pE \left({X^{2}}\right) +2pE^{} \left({X}\right) + p \)   
+
+   \(\displaystyle E \left({X^2}\right) - pE \left({X^{2}}\right)\) \(=\) \(\displaystyle 2pE^{} \left({X}\right) + p \)   
+
+   \(\displaystyle E \left({X^2}\right)(1-p)\) \(=\) \(\displaystyle 2p(\dfrac p {1-p}) + p \)   
+
+   \(\displaystyle E \left({X^2}\right)\) \(=\) \(\displaystyle \dfrac {2p^2} {{(1-p)}^2} + \dfrac {p} {1-p} = \dfrac {2p^2 + p - p^2} {{(1-p)}^2} = \dfrac {p^2 + p} {{(1-p)}^2}  \)   
+
+   \(\displaystyle Var\left({X}\right) = E \left({X^{2}}\right)\) - \(\displaystyle E^{2} \left({X}\right) =  \dfrac {p^2 + p} {{(1-p)}^2} -  \dfrac {p^2} {{(1-p)}^2} =  \dfrac { p} {{(1-p)}^2} \)   
+
+   \(\displaystyle Var\left({X}\right) =  \dfrac { p} {{(1-p)}^2} \)   
+
+
+   
+     \pagebreak
+   
+   
+   
+   
+  \subsection*{(b)} 
+
+$ \pi_n =  \dfrac {p^n(1-p)} {1-p^{k+1}}$  $n=0,1,2,...,K-1;  p= \dfrac \lambda \mu$
+
+$\bar{N} = \dfrac {p} {1-p} - \dfrac {(K+1)p^{K+1}} {1-p^{k+1}}$
+
+$ \displaystyle \sum_{n = o}^{K}  \pi_n = 1$
+
+$ \pi_0 +\pi_1 +\pi_2... +\pi_k  =  1$
+
+$ \pi_0 +(\dfrac \lambda \mu)^1\pi_0 +(\dfrac \lambda \mu)^2\pi_0... +(\dfrac \lambda \mu)^k\pi_0  =  1$
+
+$ \pi_0(1 +(\dfrac \lambda \mu)^1 +(\dfrac \lambda \mu)^2... +(\dfrac \lambda \mu)^k)  =  1$
+
+$ \pi_0  \displaystyle \sum_{n = o}^{K} (\dfrac \lambda \mu)^n  =  1$
+
+$ \pi_0 = \frac 1 {(1 +(\dfrac \lambda \mu)^1 +(\dfrac \lambda \mu)^2... +(\dfrac \lambda \mu)^k)} =  \frac 1 {\displaystyle \sum_{n = o}^{K} (\dfrac \lambda \mu)^n} = \dfrac {1-p} {1-p^{k+1}}$
+
+$ \pi_n = \pi_0 (\dfrac \lambda \mu)^n = \frac { (\dfrac \lambda \mu)^n} {\displaystyle \sum_{n = o}^{K} (\dfrac \lambda \mu)^n} $  
+
+$\bar{N} = E(N) = \displaystyle \sum_{i = o}^{K} i\pi^i  =  \displaystyle \sum_{i = o}^{K} ip^i\dfrac {1-p} {1-p^{k+1}} =  \dfrac {p(1-p)} {1-p^{k+1}}\displaystyle \sum_{i = o}^{K} ip^{i-1} $
+
+$\bar{N} =  \dfrac {p(1-p)} {1-p^{k+1}}\displaystyle \sum_{i = o}^{K} ip^{i-1} =  \dfrac {p(1-p)} {1-p^{k+1}}\displaystyle \sum_{i = o}^{K} \frac d {dp}p^{i} =  \dfrac {p(1-p)} {1-p^{k+1}}\frac d {dp}\displaystyle \sum_{i = o}^{K} p^{i} =  \dfrac {p(1-p)} {1-p^{k+1}}\frac d {dp}\displaystyle (\dfrac {1-p^{k+1}} {1-p}) $
+
+$$\displaystyle\frac d {dp}\displaystyle (\dfrac {1-p^{k+1}} {1-p}) = \displaystyle \dfrac {(1-p^{k+1}) - (k+1)(1-p)p^k} {(1-p)^2} = \dfrac {1-p^{k+1}} {(1-p)^2} - \dfrac {(k+1)p^{k}} {1-p}$$
+
+$\bar{N} =  \dfrac {p(1-p)} {1-p^{k+1}}  \displaystyle(\dfrac {1-p^{k+1}} {(1-p)^2} - \dfrac {(k+1)p^{k}} {1-p}) = \dfrac {p} {1-p} - \dfrac {(K+1)p^{K+1}} {1-p^{k+1}}$
+
+$\bar{N} = \dfrac {p} {1-p} - \dfrac {(K+1)p^{K+1}} {1-p^{k+1}}$
+
+
+  \pagebreak
+
+  \section*{Problem 2 }   
+    \subsection*{(a) proofs:} 
+  \begin{center}
+  $\pi_0+\pi_1+\pi_2=1$ 
+
+  $P_{10}+P_{11}+P_{12}=1$
+  \end{center}
+
+  Show  $\pi_0 = \frac{P_{10}}{1+P_{10}}$
+  
+  $\pi_0P_{01} = \pi_1P_{10} + \Pi_2P_{20}$
+  
+$\pi_0(1) = \pi_1P_{10}+\pi_2P_{10} = P_{10}(\pi_1+\pi_2) = P_{10}(1-\pi_0)  $
+
+$\pi_0 = P_{10}-\pi_0P_{10}  $
+
+$\pi_0+\pi_0P_{10} = P_{10}  $
+
+$\pi_0\left(1+P_{10}\right) = P_{10}$
+
+$\pi_0 = \frac{P_{10}}{1+P_{10}}$
+
+${ }$
+
+Show  $\pi_1 = \frac{P_{10}+P_{11}}{1+P_{10}}$
+
+ $\pi_0P_{01} = \frac{P_{10}}{1+P_{10}} = \pi_1P_{10} + \pi_2P_{20}$
+
+ $\pi_0P_{01} = \frac{P_{10}}{1+P_{10}} = \pi_1P_{10} + P_{20}(\frac{\pi_1P_{12}} {P_{21}+P_{20}})$
+
+   $\pi_0P_{01} = \frac{P_{10}}{1+P_{10}} = \pi_1(P_{10} + \frac{P_{20}P_{12}} {P_{21}+P_{20}}) = \pi_1(\frac{P_{10}(P_{21}+P_{20}) + P_{20}P_{12}} {P_{21}+P_{20}})$
+
+$\pi_1 = \frac{P_{10}}{1+P_{10}} (\frac  {P_{21}+P_{20}} {P_{10}(P_{21}+P_{20}) + P_{20}P_{12}} ) = \frac{P_{10}}{1+P_{10}} (\frac  {P_{21}+P_{20}} {P_{10}(P_{21}+P_{20}) + P_{10}P_{22}} ) = \frac{P_{10}}{1+P_{10}} (\frac  {P_{11}+P_{10}} {P_{10}(P_{21}+P_{20} + P_{22}) } ) = \frac{1}{1+P_{10}} (\frac  {P_{11}+P_{10}} {1(1) } ) $
+
+$\pi_1 = \frac{P_{11}+P_{10}} {1+P_{10}}$
+
+${ }$
+
+Show  $\pi_2 = \frac{1-(P_{10}+P_{11})}{1+P_{10}}$
+
+$\pi_2 = \pi_1(\frac{P_{12}}{P_{21}+P_{20}}) = \pi_1(\frac{P_{12}}{P_{11}+P_{10}}) = \frac{P_{11}+P_{10}} {1+P_{10}} (\frac{P_{12}}{P_{11}+P_{10}}) = \frac{P_{11}+P_{10}} {1+P_{10}} (\frac{1-(P_{10}+P_{11}}{P_{11}+P_{10}}) = \frac{1-(P_{10}+P_{11})} {1+P_{10}} $
+
+$\pi_2 = \frac{1-(P_{10}+P_{11})} {1+P_{10}} $
+
+No other equations are possible for state probabilities because CSMA has exactly three states.  
+
+  \subsection*{(b) Explain why the approximations for $P_{10}$ and $P_{11}$ are valid. }
+  
+ The approximations for $P_{10}$ and $P_{11}$ are valid because a propagation delay is much smaller than the packet length, according to the assumptions made in class lectures.  
+
+  \subsection*{(c) is the approximate throughput below correct? }
+  
+  ??? $S = \displaystyle\frac {P_s \pi_1 P} {\displaystyle  \sum_{j=o}^{2}  T_j \pi_j}  = \displaystyle\frac { P e^{-\lambda(P+\tau)} } { \frac 1 \lambda + (P+2\tau)e^{\lambda\tau}} $ ???
+  
+  $T_0 = \frac 1 \lambda;$  ${ } { } T_1 = T_2 = (Y + P + \tau);$   $Y = \tau - \frac 1 \lambda (1-e^{-\lambda\tau}); $
+  
+  $ P_s = e^{-\lambda\tau}; P_{10} = e^{-\lambda(P+\tau)};  P_{11} = \lambda(P+\tau)e^{-\lambda(P+\tau)};  $
+
+  $S = \displaystyle\frac {P_s \pi_1 P} {\displaystyle  \sum_{j=o}^{2}  T_j \pi_j} = \displaystyle\frac {P_s  (\frac{P_{10}+P_{11}}{1+P_{10}}) P} {\displaystyle  \sum_{j=o}^{2}  T_j \pi_j} = \displaystyle\frac {P_s  (\frac{P_{10}+P_{11}}{1+P_{10}}) P} {T_0(\frac{P_{10}}{1+P_{10}}) + T_1(\frac{P_{10}+P_{11}}{1+P_{10}}) + T_2(\frac{1-(P_{10}+P_{11})}{1+P_{10}}) } $   
+    
+    $S = \displaystyle\frac {P_s  (\frac{P_{10}+P_{11}}{1+P_{10}}) P} {T_0(\frac {P_{10}} {1+P_{10}}) + T_1( \frac{(P_{10}+P_{11}) + 1-(P_{10}+P_{11})} {1+P_{10}}) } = \displaystyle\frac {P_s  (\frac{P_{10}+P_{11}}{1+P_{10}}) P} {\frac 1 \lambda(\frac {P_{10}} {1+P_{10}}) + (Y + P + \tau)( \frac{1} {1+P_{10}}) }  = \displaystyle\frac {P_s  ({P_{10}+P_{11}}) P}     {{ \frac {P_{10}} {\lambda} + (Y + P + \tau) }} $  
+
+  $S = \displaystyle\frac {P_s  P(e^{-\lambda(P+\tau)})({1+P\lambda+ \tau\lambda})}     {{ \frac {e^{-\lambda(P+\tau)}} {\lambda} + ( \tau - \frac 1 \lambda (1-e^{-\lambda\tau}) + P + \tau) }} = \displaystyle\frac {P_s  P(e^{-\lambda(P+\tau)})({1+P\lambda+ \tau\lambda})}     {{ \frac {e^{-\lambda(P+\tau)}} {\lambda} + P +  2\tau - \frac {1-e^{-\lambda\tau}} \lambda }}  = \displaystyle\frac {P_s  P(e^{-\lambda(P+\tau)})({1+P\lambda+ \tau\lambda})}     {{ P +  2\tau + \frac {e^{-\lambda(P+\tau)} + e^{-\lambda\tau} - 1} \lambda }} $
+  
+  $S = \displaystyle\frac {P_s \pi_1 P} {\displaystyle  \sum_{j=o}^{2}  T_j \pi_j}  = \displaystyle\frac {P_s ({1+P\lambda+ \tau\lambda}) Pe^{-\lambda(P+\tau)} }     {{ P +  2\tau + \frac {e^{-\lambda(P+\tau)} + e^{-\lambda\tau} - 1} \lambda }} != \displaystyle\frac { P e^{-\lambda(P+\tau)} } { \frac 1 \lambda + (P+2\tau)e^{\lambda\tau}} $
+  
+  The result from the class slide is INCORRECT.
+
+\pagebreak
+
+ \section*{Problem 3 }   
+ \subsection*{(a) compute throughput:} 
+ $\tau = $ Length of time slot.
+
+ $T+\tau$ = time of transmissions, either successful or unsuccessful
+ 
+ $P[I = k\tau ] = \displaystyle (e^{-g\tau})^{k-1}(1-e^{-g\tau})$  $ {  } $for $  k = 1, 2, ... $
+  
+ $I = \displaystyle \frac \tau {1-e^{-g\tau}};$ Idle Period
+ 
+ $B = \displaystyle \frac {T+\tau} {e^{-g\tau}}; $  Busy Period
+ 
+ $U = \displaystyle T\frac  {B} {T+\tau} P_{suc}; $  Useful time
+ 
+ $P_{suc} = \displaystyle \frac {g\tau e^{-g\tau}} {1-e^{-g\tau}} $
+ 
+ $ a = \displaystyle \frac \tau T ;$  and $ G = gT;$ and $\tau T = aG$
+ 
+ $S =  \displaystyle \frac U {B+I} = \frac {\displaystyle T\frac  {B} {T+\tau} P_{suc}} {  \displaystyle \frac {T+\tau} {e^{-g\tau}} +  \displaystyle \frac \tau {1-e^{-g\tau}}} 
+ = \frac {\displaystyle T  \displaystyle \frac {g\tau e^{-g\tau}} {1-e^{-g\tau}} \frac  {\displaystyle \frac {T+\tau} {e^{-g\tau}}} {T+\tau} } {  \displaystyle \frac {(T+\tau)(1-e^{-g\tau}) + \tau(e^{-g\tau})} {e^{-g\tau}(1-e^{-g\tau})} } = $
+
+$S =  {\displaystyle T  \displaystyle \frac {g\tau e^{-g\tau}} {1-e^{-g\tau}}   {\displaystyle \frac {T+\tau} {e^{-g\tau}}} \frac 1 {T+\tau} }  \times  {  \displaystyle \frac {e^{-g\tau}(1-e^{-g\tau})} {(T+\tau)(1-e^{-g\tau}) + \tau(e^{-g\tau})} }
+= {  \displaystyle \frac {Tg\tau e^{-g\tau}} {(T+\tau)(1-e^{-g\tau}) + \tau(e^{-g\tau})} } $
+
+$ S = {  \displaystyle \frac {Tg\tau e^{-g\tau}} {T+\tau -Te^{-g\tau} -\tau e^{-g\tau} + \tau(e^{-g\tau})} } 
+= {  \displaystyle \frac {Tg\tau e^{-g\tau}} {T+\tau -Te^{-g\tau} } } 
+= {  \displaystyle \frac {g\tau e^{-g\tau}} {1+\frac \tau T - e^{-g\tau} } } 
+= {  \displaystyle \frac {aG e^{-aG}} {1+ a - e^{-aG} } } $
+
+$ S = \displaystyle \lim_{a \rightarrow 0} \displaystyle \frac {aG e^{-aG}} {1+ a - e^{-aG} } =  \displaystyle \frac {G} {1+ G}   $
+ 
+
+ \subsection*{(b) discuss changes}   We would need to change the analysis by adding in a part that takes into account the time spent waiting for the ACK (acknowledgement) to come in.  Conversely, this would also force us to take into account the possibility of an NAK message which implies collision detection.  By using the same channel for ACKs being sent, it would also slow down the overall performance.
+ 
+  \subsection*{(c) compare:}  Comparing time slotted CSMA vs unslotted CSMA, we find that the performance of of unslotted will have a lower throughput because of a higher probability of collisions.  However, Slotted CSMA has the potential to waste time during period of low inactivity by leaving slots idle.
+
+    
+    \section*{Problem 4 }   
+    A way to emulate CSMA/CD but having nodes that are half-duplex would be to use Collision Avoidance.  Collision Avoidance eliminates Hidden Terminals within CSMA.  Because of hidden terminals, the vulnerability of a data packet is just as in pure ALOHA, twice its length.  With collision avoidance, stations exchange small control packets to determine which sender can transmit to a receiver. The collision avoidance dialogue can be controlled by the sender or the receiver.  Multiple Access with Collision Avoidance for Wireless (MACAW) is an alternative to traditional CSMA.  MACAW attempts to detect collisions at the receiver by establishing a request-response dialogue between senders and intended receivers.  MACAW transmits data from X to Y by sending a RTS (request to send) from X to Y.  then a CTS (clear to send) from Y to X.  the X sends a DS (data send) to Y.  Y then sends a Data Acknowledgement to Y.  Y sends an ACK (acknowledgement) back to X upon completion.  MACAW is a modification of MACA and the addition of the DS and ACK packets decrease MACAW's throughput in comparison to MACA's.  
+    
+    
+    
+
+   
+    \section*{Problem 5 Show efficiency $= 1-p$ }   
+    
+    Probability that a packet and its ACK are delivered correctly = $1-p$
+           
+   $P$ is the packet time.  $W$ is the size of the buffer, assume $W$ is infinitely large.
+   
+   $W\times P > S $  Where $S$ is the time needed for a packet to be correctly acknowledged by the receiver to the sender.
+   
+   $ T_s  = \frac 1 {1-p} $ is the number of transmissions needed for success.  
+
+   $E(X) = P \times T_s  = \frac P {1-p}$ is the average time to successfully transmit a packet.
+   
+   Efficiency $= \frac{packet time} {E(X)} = \frac{P} {E(X)} $
+   
+   Efficiency $= \frac{P} {E(X)} = \frac{P} {\frac P {1-p}} = P \times {\frac {1-p} {P}} = 1-p$
+   
+
+ \pagebreak
+    
+        \section*{Extra Credit }  
+     Suppose that the voltage at the ends of a circuit can be modeled as a random variable $v$ with pdf:
+        
+  \begin{center}
+   $\displaystyle f_v(v) = \frac 1 {\sqrt{2\pi2}} e^{-\frac {(v-3)^2} {8}}    $
+  \end{center}
+a. What is the expectation of the voltage $v$?
+
+\begin{verbatim}
+E[v] = 3
+\end{verbatim}
+
+Suppose the circuit is connected to an amplifier with bias, creating a voltage $w=2v+3$.
+
+b. What are the mean and variance of $w$?
+\begin{verbatim}
+E[w]=2E[v]+3=9
+Var(w) = 4Var(v) = 16
+\end{verbatim}
+
+Now disconnect the amplifier, and suppose that some thermal noise $n$ independent of $v$ is added to our original voltage $v$, creating a random variable $y=v+n$. Assume the noise has normal distribution with mean equal to and variance equal to 0.5.
+
+c. Write the expression of the joint pdf of $v$ and $n$, $f_{v,n}(v,n)$.
+
+ $\displaystyle f_{v,n}(v,n) = \frac 1 {\sqrt{2\pi}2} e^{-\frac {(v-3)^2} {8}} \times \frac 1 {\sqrt{2\pi \frac 1 2}} e^{-n^2} = \frac 1 {\sqrt{2}\pi2} e^{-\frac {(v-3)^2} {8} - n^2} $
+
+d. Compute $P(v>3$ and $n<0)$.
+
+Since $n$ and $v$ are independent, it is equal to $P(v>3)P(n>0) = 0.5?0.5$
+
+e. What are the mean and variance of $y$?
+
+\begin{verbatim}
+E[y] = E[v]+E[n] = 3
+Var[y]=(since they are independent and therefore uncorrelated) = Var[v]+Var[n] = 4.5.
+\end{verbatim}
+
+
+ \pagebreak
+    
+        \section*{Extra Credit }   
+An application of probability in Computer Science is the analysis of the QuickSort Algorithm.  Using probability, we can show that the Randomized QuickSort will run much faster than Quicksorts Worst Case running time.  As a computer science major, this is applicable everyday in analyzing the runtime of a program that frequently sorta or manipulates data in a similar way as Quicksort.
+
+QuickSort:  Given array of some length $n$,
+
+1. Pick an element p of the array as the pivot (or halt if the array has size 0 or 1).
+
+2. Split the array into sub-arrays LESS, EQUAL, and GREATER by comparing each element to the pivot. (LESS has all elements less than $p$, EQUAL has all elements equal to $p$, and GREATER has all elements greater than $p$).
+    
+3. recursively sort LESS and GREATER.
+
+ What is worst-case running time of Basic-Quicksort? We can see that if the array is already sorted, then in Step 2, all the elements (except $p$) will go into the GREATER bucket. Furthermore, since the GREATER array is in sorted order, this process will continue recursively, resulting in time $\Omega(n^2)$. We can also see that the running time is $O(n^2)$ on any array of $n$ elements because Step 1 can be executed at most n times, and Step 2 takes at most $n$ steps to perform. Thus, the worst-case running time is $\Theta(n^2)$.
+ 
+ 
+  Randomized-Quicksort: Run the Quicksort algorithm as given above, each time picking a $random$ element in the array as the pivot.
+  
+We will prove that for $any$ given array input array $I$ of $n$ elements, the expected time of this algorithm $E[T(I)]$ is $O(nlogn)$. This is called a Worst-case Expected-Time bound. Notice that this is better than an average-case bound because we are no longer assuming any special properties of the input. E.g., it could be that in our desired application, the input arrays tend to be mostly sorted or in some special order, and this does not affect our bound because it is a $worst-case$ bound with respect to the input. It is a little peculiar: making the algorithm probabilistic gives us $more$ control over the running time.
+  
+To prove these bounds, we first detour into the basics of probabilistic analysis.
+  
+  For simplicity, let us assume no two elements in the array are equal ? when we are done with the analysis, it will be easy to look back and see that allowing equal keys could only improve performance. We now prove the following theorem.
+  
+ Theorem: The expected number of comparisons made by randomized quicksort on an array of size $n$ is at most $2n$ln$n$
+ 
+ Proof:  Assume no two elements in the array are equal since it is the worst case and will make our notation simpler. The trick will be to write the quantity we care about (the total number of comparisons) as a sum of simpler random variables, and then just analyze the simpler ones.
+ 
+ Define random variable $X_{ij}$ to be 1 if the algorithm $does$ compare the $i$th smallest and $j$th smallest elements in the course of sorting, and 0 if it does not. Let $X$ denote the total number of comparisons made by the algorithm. Since we never compare the same pair of elements twice, we have
+ 
+ 
+\begin{center}
+   $\displaystyle X = \sum_{i=1} ^{n} \sum_{j=i+1} ^{n} {X_{ij}} $
+   
+   $\displaystyle E[X] = \sum_{i=1} ^{n} \sum_{j=i+1} ^{n} {E[X_{ij}]} $
+\end{center}
+
+Let us consider one of these $X_{ij}$s for $i < j$. Denote the $i$th smallest element in the array by ei and the jth smallest element by $e_j$, and conceptually imagine lining up the elements in sorted order. If the pivot we choose is between $e_i$ and $e_j$ then these two end up in different buckets and we will never compare them to each other. If the pivot we choose is either $e_i$ or $e_j$ then we do compare them. If the pivot is less than $e_i$ or greater than $e_j$ then both $e_i$ and $e_j$ end up in the same bucket and we have to pick another pivot. So, we can think of this like a dart game: we throw a dart at random into the array: if we hit $e_i$ or $e_j$ then $X_{ij}$ becomes 1, if we hit between $e_i$ and $e_j$ then $X_{ij}$ becomes 0, and otherwise we throw another dart. At each step, the probability that $X_{ij} = 1$ conditioned on the event that the game ends in that step is exactly $\displaystyle \frac 2 {j - i + 1}$. Therefore, overall, the probability that $X_{ij} = 1$ is $\displaystyle \frac 2 {j - i + 1}$.
+
+In other words, for a given element $i$, it is compared to element $i + 1$ with probability 1, to element $i + 2$ with probability $\frac 2 3$, to element $i + 3$ with probability $\frac 2 4$, to element $i + 4$ with probability $\frac 2 5$ and so on. So, we have:
+
+\begin{center}
+   $\displaystyle E[X] = \sum_{i=1} ^{n} {2(\frac 1 2 + \frac 1 3 + \frac 1 4 + \frac 1 5 + ... + \frac 1 {n-i+1} )} $
+\end{center}
+
+ The quantity $1 + \frac 1 2 + \frac 1 3 + ... + \frac 1 {n} $, denoted $H_n$, is called the $n$th harmonic number and is in the range [ln $n, 1 + $ln $n$] (this can be seen by considering the integral of $f (x) = \frac 1 x$). Therefore,
+ 
+ \begin{center}
+   $\displaystyle E[X] <  2n( H_n - 1) \le 2n $ln$ n$
+\end{center}
+ 
+ 
+ 
+ 
+ 
+ \pagebreak
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+\end{document}
