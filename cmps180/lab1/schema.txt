@@ -1,0 +1,7 @@
+movies(movie_id, name, description, rating, year, length) key = movie_id
+mv_customers(cust_id, firstName, lastName, email, address) key = cust_id
+mv_addresses(addr_id, houseNumber, street, city, state, postalCode, phone) key = addr_id
+
+books(book_id, title, author, edition, publisher) key = book_id
+bk_uthors(author_id, firstName, lastName) key = author_id
+bk_customers(cust_id, firstName, lastName, phone) key = cust_id
